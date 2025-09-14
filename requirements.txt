@@ -1,0 +1,9 @@
+speechrecognition
+pyttsx3
+spacy
+pyjokes
+psutil
+wikipedia-api
+requests
+Flask
+Flask-SocketIO

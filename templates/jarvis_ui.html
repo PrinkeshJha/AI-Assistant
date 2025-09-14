@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis - AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --orb-color: #3b82f6;
+            --listening-color: #22c55e;
+            --thinking-color: #eab308;
+            --speaking-color: #a855f7;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color);
+            color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+
+        #ai-orb {
+            position: relative;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        /* --- Styles for the central image --- */
+        #orb-image {
+            width: 95%;
+            height: 95%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 10;
+            opacity: 0.7;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #ai-orb:hover #orb-image {
+            opacity: 1;
+        }
+
+        .orb-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            z-index: 11; /* Ensure rings are on top of the image */
+        }
+
+        .ring-1 { animation-name: rotate; }
+        .ring-2 { animation-name: rotate-reverse; animation-duration: 6s; opacity: 0.7; }
+        .ring-3 { animation-name: rotate; animation-duration: 8s; opacity: 0.5; }
+
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes rotate-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .message-bubble { animation: fade-in 0.5s ease-out forwards; }
+
+        .state-idle { box-shadow: 0 0 30px 5px var(--orb-color); border: 2px solid var(--orb-color); }
+        .state-idle .ring-1, .state-idle .ring-2, .state-idle .ring-3 { border-color: var(--orb-color); }
+        .state-listening { box-shadow: 0 0 40px 10px var(--listening-color); border: 2px solid var(--listening-color); }
+        .state-listening .ring-1, .state-listening .ring-2, .state-listening .ring-3 { border-color: var(--listening-color); animation-duration: 2s; }
+        .state-thinking { box-shadow: 0 0 40px 10px var(--thinking-color); border: 2px solid var(--thinking-color); }
+        .state-thinking .ring-1, .state-thinking .ring-2, .state-thinking .ring-3 { border-color: var(--thinking-color); animation-duration: 1s; }
+        .state-speaking { box-shadow: 0 0 40px 10px var(--speaking-color); border: 2px solid var(--speaking-color); }
+        .state-speaking .ring-1, .state-speaking .ring-2, .state-speaking .ring-3 { border-color: var(--speaking-color); animation-duration: 3s; }
+        
+        #status-text { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+
+        #conversation-log::-webkit-scrollbar { width: 6px; }
+        #conversation-log::-webkit-scrollbar-track { background: transparent; }
+        #conversation-log::-webkit-scrollbar-thumb { background-color: rgba(59, 130, 246, 0.6); border-radius: 10px; }
+    </style>
+</head>
+<body class="overflow-hidden">
+    <canvas id="particle-canvas"></canvas>
+    <div class="min-h-screen w-full flex flex-col items-center justify-center p-4 relative">
+        <div id="ai-orb" class="w-48 h-48 md:w-64 md:h-64 rounded-full flex items-center justify-center glass state-idle cursor-pointer">
+            
+            <img id="orb-image" src="{{ url_for('static', filename='jarvis.png') }}" alt="AI Assistant Logo">
+
+            <div class="ring-1"></div>
+            <div class="ring-2"></div>
+            <div class="ring-3"></div>
+            
+            <div class="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-blue-500/10 to-purple-600/10 opacity-70"></div>
+        </div>
+        <p id="status-text" class="mt-8 text-xl text-gray-300 font-medium tracking-wide">Connecting to server...</p>
+        <div id="conversation-log" class="w-full max-w-2xl h-64 mt-6 p-4 rounded-lg glass overflow-y-auto space-y-4"></div>
+    </div>
+
+    <script>
+        const orb = document.getElementById('ai-orb');
+        const statusText = document.getElementById('status-text');
+        const conversationLog = document.getElementById('conversation-log');
+        
+        const socket = io();
+        
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition;
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+        } else {
+            updateUI('IDLE', 'Speech Recognition not supported in this browser.');
+        }
+
+        function updateUI(newState, text) {
+            statusText.textContent = text;
+            let visualState = newState.toLowerCase();
+            if (visualState === 'awake') visualState = 'listening';
+            
+            orb.className = "w-48 h-48 md:w-64 md:h-64 rounded-full flex items-center justify-center glass cursor-pointer"; // Reset classes
+            orb.classList.add(`state-${visualState}`);
+        }
+
+        function addMessage(sender, message) {
+            const isUser = sender === 'You';
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `w-full flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `max-w-xs md:max-w-md p-3 rounded-xl message-bubble ${isUser ? 'bg-blue-600' : 'bg-gray-700'}`;
+            bubble.innerHTML = `<p class="font-bold text-sm mb-1">${sender}</p><p>${message}</p>`;
+            
+            messageDiv.appendChild(bubble);
+            conversationLog.appendChild(messageDiv);
+            conversationLog.scrollTop = conversationLog.scrollHeight;
+        }
+
+        function speak(text, onEndCallback) {
+            updateUI('SPEAKING', 'Speaking...');
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.onend = onEndCallback;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function startListening() {
+            if (recognition) {
+                try {
+                    updateUI('LISTENING', 'Listening for command...');
+                    recognition.start();
+                } catch(e) {
+                    console.log("Recognition already active, ignoring start request.");
+                }
+            }
+        }
+
+        socket.on('connect', () => console.log('Connected to server!'));
+
+        socket.on('assistant_response', (data) => {
+            console.log('Received response from server:', data);
+            addMessage('Jarvis', data.message);
+            
+            speak(data.message, () => {
+                if (data.state === 'AWAKE') {
+                    startListening();
+                } else {
+                    updateUI('IDLE', 'Click the orb to speak.');
+                }
+            });
+        });
+
+        orb.addEventListener('click', startListening);
+
+        recognition.onresult = (event) => {
+            const command = event.results[0][0].transcript;
+            addMessage('You', command);
+            updateUI('THINKING', 'Processing...');
+            socket.emit('user_command', { command: command });
+        };
+
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+            updateUI('IDLE', 'Sorry, I had trouble listening.');
+        };
+
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particlesArray;
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color;
+            }
+            draw() {
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX; this.y += this.directionY; this.draw();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * .4) - .2;
+                let directionY = (Math.random() * .4) - .2;
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, 'rgba(59, 130, 246, 0.3)'));
+            }
+        }
+
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+        }
+        
+        window.addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            initParticles();
+        });
+
+        initParticles();
+        animateParticles();
+    </script>
+</body>
+</html>
