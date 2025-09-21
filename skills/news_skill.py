@@ -20,7 +20,7 @@ class NewsSkill(Skill):
             if not articles:
                 return "I couldn't find any news articles at the moment.", "IDLE"
             
-            headlines = "Here are the top headlines... " + "<br>".join([article['title'] for article in articles[:5]])
+            headlines = "Here are the top headlines...<br><br>" + "<br>".join([article['title'] for article in articles[:5]])
             return headlines, "IDLE"
         except Exception as e:
             print(f"News skill error: {e}")

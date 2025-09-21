@@ -28,10 +28,12 @@ def home():
 
 @socketio.on('connect')
 def handle_connect():
-    """Handles a new client connection."""
+    """Handles a new client connection with an onboarding message."""
     print('Client connected')
+    # --- ONBOARDING MESSAGE ---
+    welcome_message = f"Hello, I am {jarvis.name}. You can ask me for the weather, news, or say 'help' to see all commands."
     socketio.emit('assistant_response', {
-        'message': f"Hello, I am {jarvis.name}. Click the orb to speak.",
+        'message': welcome_message,
         'state': 'IDLE'
     })
 

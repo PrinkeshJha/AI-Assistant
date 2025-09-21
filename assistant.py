@@ -2,7 +2,7 @@
 import importlib
 import os
 import sys
-from typing import Optional
+from typing import Optional, Dict, Any
 
 import spacy
 
@@ -20,7 +20,10 @@ class JarvisAssistant:
     def __init__(self):
         self.name = ASSISTANT_NAME
         self.nlp = spacy.load("en_core_web_sm")
+        # --- CONTEXT HOLDER ---
+        self.conversation_context: Dict[str, Any] = {}
         self.skills: list[Skill] = self._load_skills()
+
 
     def _load_skills(self) -> list[Skill]:
         skills = []
@@ -43,17 +46,29 @@ class JarvisAssistant:
         command_lower = command.lower()
 
         if WAKE_WORD in command_lower and len(command_lower.replace(WAKE_WORD, "").strip()) < 4:
+            self.conversation_context.clear()
             return "Yes, Sir?", "AWAKE"
 
         if WAKE_WORD in command_lower:
             command_lower = command_lower.replace(WAKE_WORD, "").strip()
 
+        # --- CONTEXT INJECTION LOGIC ---
         doc = self.nlp(command_lower)
+        has_pronoun = any(token.pos_ == "PRON" and token.text in ["he", "his", "him", "her", "it", "its"] for token in doc)
         
+        if has_pronoun and 'last_subject' in self.conversation_context:
+            subject = self.conversation_context['last_subject']
+            # Simple pronoun replacement
+            command_with_context = command_lower.replace("his", subject).replace("her", subject).replace("its", subject).replace("it", subject).replace("he", subject).replace("him", subject)
+            print(f"Injecting context. New command: '{command_with_context}'")
+            doc = self.nlp(command_with_context)
+        else:
+            self.conversation_context.clear()
+
         for skill in self.skills:
             for intent in skill.intents():
                 if intent in doc.text:
-                    response, new_state = skill.handle(command_lower, doc)
+                    response, new_state = skill.handle(doc.text, doc)
                     return response, new_state
         
         return "I'm not sure how to help with that yet.", "IDLE"
