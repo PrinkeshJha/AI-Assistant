@@ -1,48 +1,63 @@
-# 🎙️ Jarvis - A Web-Based AI Voice Assistant  
+# 🎙️ Jarvis - A Multi-User AI Voice Assistant  
 
-A modern, interactive **AI voice assistant** with a web-based user interface.  
-This project is a **full-stack AI application** featuring:  
-✅ Modular skill-based architecture  
-✅ Real-time bidirectional communication  
-✅ Dynamic and aesthetic Web UI with particle effects  
-✅ Advanced natural language processing with custom context injection  
+Jarvis is a modern, concurrent **AI voice assistant** featuring a web-based user interface, modular skills, and thread-safe session tracking.  
 
 ---
 
-## 🌐 Live Demo  
-The interactive web-based UI provides:  
-- **Real-Time Status Indicator**: Shows states like *Idle, Listening, Processing, and Speaking*.  
-- **Aesthetic Audio Visualizer**: A dancing waveform that animates while Jarvis is talking.  
-- **Conversation Logs**: An output box showing speech-to-text inputs and Jarvis's spoken replies.  
-- **Sleek Interactive Orb**: Glowing central controller that users click to activate speech recognition.  
+## 🏗️ System Architecture  
+
+The system operates concurrently using the following execution pipeline:
+
+```
+[ Browser Web Speech API ] 
+         │  (Voice Input)
+         ▼
+[ Client-side JS Recognition ]
+         │  (Parsed Text Request)
+         ▼  (Socket.IO - Multi-User Concurrent Rooms)
+[ Flask-SocketIO Backend (app.py) ]
+         │  (Session Isolation: request.sid Context Local)
+         ▼
+[ Assistant Logic (assistant.py) ] ── (Regex Pronoun Resolution & spaCy NER)
+         │  
+         ▼  (Pluggable Skill Dispatching)
+[ skills/ ] ─────────────► [ services/ ]
+  - weather_skill.py        - weather_service.py (API call, timeout=5, retries, caching)
+  - news_skill.py           - news_service.py    (API call, timeout=5, retries, caching)
+  - wiki_skill.py           - wiki_service.py    (API call, timeout=5, retries, caching)
+```
+
+1. **Frontend (Browser)**: Captures voice input, processes speech recognition locally, and establishes a bidirectional Socket.IO connection.
+2. **Backend Concurrency (Flask-SocketIO)**: Routes concurrent client rooms via thread pools, assigning unique contexts mapped to socket session IDs (`request.sid`).
+3. **NLP Processing (spaCy)**: Performs cased Named Entity Recognition (NER) and resolves pronoun references (e.g., "Paris" -> "its weather").
+4. **Resilient Service Layer**: Fetches data from external REST APIs using retries, client timeouts, and cache layers.
 
 ---
 
-## ✨ Key Features  
+## ⚡ Concurrency & Session Model  
 
-- 🎨 **Aesthetic Dark Mode UI** – Built with modern CSS effects, particle layers, and glassmorphism.  
-- 🎤 **Voice-Activated Interaction** – Leverages the browser Web Speech API for voice recognition.  
-- ⚡ **Real-Time Client-Server Bridge** – Flask-SocketIO pushes assistant replies and visual states instantly.  
-- 🧩 **Modular Skill System** – Easily add or modify skills by dropping python modules in `/skills`!  
-- 🧠 **Smart Entity Extraction & Context** – Uses **spaCy** for cased Named Entity Recognition (NER) and regex-based pronoun context resolution (e.g. "Paris" -> "its weather").  
+To support multiple concurrent users without context cross-talk (e.g., User B's queries resolving against User A's last subject), Jarvis implements:
+* **Thread-Based Concurrency**: Runs with `async_mode="threading"` inside Flask-SocketIO.
+* **Session Context Manager**: The `session_context.py` manager handles client-specific data. Contexts are isolated using the client's `request.sid` session token.
+* **Leak Prevention**: Mapped socket sessions are initialized on client `connect` events and deleted from the global memory store on `disconnect`.
 
 ---
 
-## 🛠️ Tech Stack  
+## 🛡️ Reliability & Resilience Features  
 
-- **Backend:** Python 3.8+, Flask, Flask-SocketIO  
-- **NLP:** spaCy (`en_core_web_sm` model)  
-- **Frontend:** Vanilla HTML, JavaScript, Tailwind CSS (via CDN)  
-- **APIs:** [GNews](https://gnews.io/), [OpenWeatherMap](https://openweathermap.org/)  
-- **Core Libraries:** `requests`, `pyjokes`, `psutil`, `wikipedia`, `speechrecognition`, `pyttsx3`  
+* **API Client Timeouts**: Every service method is locked to a strict `timeout=5` seconds to prevent slow external API calls from blocking worker threads. For third-party packages (e.g. `wikipedia`), underlying requests are monkeypatched at initialization to guarantee the timeout.
+* **Tenacity Retries**: Service calls are wrapped with a `@retry` decorator from the `tenacity` library, attempting recovery 3 times using exponential backoff before bubbling up failures.
+* **Resource Caching**: Leverages `cachetools.TTLCache` (TTL: 300s) per resource type (weather, news headlines, Wikipedia summaries) to eliminate redundant external roundtrips.
+* **Graceful Fallbacks**: Skill modules wrap execution with try-except blocks. If a service becomes completely unreachable, Jarvis responds with a friendly message (e.g., *"Weather service is temporarily unavailable, please try again."*) and writes the traceback details to `logs/assistant.log`.
+* **Latency Logging**: Invocations are timed, and execution durations (in milliseconds) are recorded in `logs/assistant.log` to track bottleneck areas.
 
 ---
 
 ## 🚀 Setup & Installation  
 
 ### 1️⃣ Prerequisites  
-- Python 3.8 or higher installed on your system.  
-- A working microphone (for web-based or local speech input).  
+- Python 3.8 or higher.  
+- Working microphone (for voice recognition in the browser).  
 
 ### 2️⃣ Clone the Repository  
 ```bash
@@ -66,91 +81,39 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5️⃣ Download the spaCy NLU Language Model  
+### 5️⃣ Download spaCy Model  
 ```bash
 python -m spacy download en_core_web_sm
 ```
 
-### 6️⃣ Configure API Keys  
-Copy the template configuration file to `config.py` and add your keys:  
-```bash
-# Windows PowerShell
-copy example.config.py config.py
-
-# macOS / Linux / Git Bash
-cp example.config.py config.py
-```
-Open `config.py` and replace placeholders with your credentials:  
-- **NEWS_API_KEY**: Get a free API key from [GNews API](https://gnews.io/).  
-- **OPENWEATHER_API_KEY**: Get a free API key from [OpenWeatherMap](https://openweathermap.org/).  
+### 6️⃣ Configure Secrets (.env)  
+API keys must be stored in a `.env` file at the root of the project (this file is ignored by git).  
+1. Copy the example environment template:
+   ```bash
+   cp .env.example .env
+   ```
+2. Open `.env` and fill in your API credentials:
+   ```env
+   NEWS_API_KEY=your_gnews_api_key_here
+   OPENWEATHER_API_KEY=your_openweathermap_key_here
+   PICOVOICE_ACCESS_KEY=your_picovoice_key_here
+   ```
 
 ---
 
-## ▶️ Run the Project  
+## ▶️ Running & Testing  
 
-Ensure your virtual environment is active, then execute:  
-
+### Running Jarvis  
+Start the Flask application server:  
 ```bash
 python app.py
 ```
+* Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your web browser.  
+* Allow microphone access, click the central orb, and ask questions!
 
-1. The Flask server will boot up locally at: **[http://127.0.0.1:5000](http://127.0.0.1:5000)**  
-2. Open this address in your web browser.  
-3. Accept the browser's request for microphone permissions.  
-4. Click the central glowing orb and start talking to Jarvis!  
-
----
-
-## 🗣️ Example Voice Commands  
-
-- **Greeting & Wakeup**:  
-  * `Jarvis` -> *"Yes, Sir?"*  
-- **Weather Information**:  
-  * `What is the weather in Paris?`  
-  * `What is its temperature?` (utilizes smart context resolution)  
-- **Latest News**:  
-  * `Tell me the news headlines`  
-- **Time & Date**:  
-  * `What time is it?`  
-  * `What day is it today?`  
-- **Wikipedia Search**:  
-  * `Search for Albert Einstein on Wikipedia`  
-- **Web Navigation**:  
-  * `Open Google`  
-  * `Open YouTube`  
-- **System Actions**:  
-  * `Check the battery level`  
-  * `Open notepad` / `Open calculator`  
-- **Humor**:  
-  * `Tell me a joke`  
-
----
-
-## 📁 Project Structure  
-
+### Running the Test Suite  
+Jarvis contains a complete suite of tests verifying session context isolation, routing, and caching behavior using mocks:  
+```bash
+pytest
 ```
-├── app.py              # Flask server and Socket.IO event router
-├── assistant.py        # Core NLP assistant controller and context management
-├── config.py           # API keys and device configurations
-├── requirements.txt    # Python library dependencies
-├── templates/
-│   └── jarvis_ui.html  # Web UI template featuring voice recognition & animations
-├── static/
-│   └── jarvis.png      # Custom avatar image for the assistant orb
-└── skills/
-    ├── base_skill.py   # Abstract base class for Jarvis skills
-    ├── control_skill.py# Skills to exit or sleep (CLI fallback)
-    ├── fun_skill.py    # Fetches funny programming jokes
-    ├── help_skill.py   # Dynamically scans & list commands for the user
-    ├── news_skill.py   # Fetches news headlines via GNews API
-    ├── system_skill.py # OS commands (Battery state, notepad/calc launcher)
-    ├── time_skill.py   # Returns date and time string
-    ├── weather_skill.py# Fetches real-time weather from OpenWeatherMap
-    └── web_skill.py    # Handles Google/YouTube redirects and Wikipedia queries
-```
-
----
-
-## 📜 License  
-
-This project is licensed under the **MIT License**. Feel free to use, distribute, and modify it.  
+All external APIs are mocked during unit testing to ensure they run offline.

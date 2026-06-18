@@ -1,0 +1,60 @@
+import pytest
+import requests
+from unittest.mock import Mock
+from services.weather_service import fetch_weather, weather_cache
+
+def test_weather_cache(monkeypatch):
+    weather_cache.clear()
+
+    call_count = 0
+    def mock_get(url, *args, **kwargs):
+        nonlocal call_count
+        call_count += 1
+        mock_resp = Mock()
+        mock_resp.status_code = 200
+        mock_resp.json.return_value = {
+            "main": {"temp": 25.5},
+            "weather": [{"description": "clear sky"}]
+        }
+        return mock_resp
+
+    monkeypatch.setattr(requests, "get", mock_get)
+
+    # First fetch - should increment call_count
+    temp, desc = fetch_weather("Berlin")
+    assert temp == 25.5
+    assert desc == "clear sky"
+    assert call_count == 1
+
+    # Second fetch - should hit cache, no call_count increment
+    temp, desc = fetch_weather("Berlin")
+    assert temp == 25.5
+    assert call_count == 1
+
+    # Fetching different city - should call API
+    temp, desc = fetch_weather("Paris")
+    assert call_count == 2
+
+def test_weather_retry(monkeypatch):
+    weather_cache.clear()
+
+    call_count = 0
+    def mock_get(url, *args, **kwargs):
+        nonlocal call_count
+        call_count += 1
+        if call_count < 3:
+            raise requests.RequestException("Unreachable API")
+        mock_resp = Mock()
+        mock_resp.status_code = 200
+        mock_resp.json.return_value = {
+            "main": {"temp": 15.0},
+            "weather": [{"description": "foggy"}]
+        }
+        return mock_resp
+
+    monkeypatch.setattr(requests, "get", mock_get)
+
+    # Hamburg - succeeds on 3rd try
+    temp, desc = fetch_weather("Hamburg")
+    assert temp == 15.0
+    assert call_count == 3

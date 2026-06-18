@@ -1,9 +1,13 @@
 # assistant.py
 import importlib
+import logging
 import os
 import re
 import sys
+import time
 from typing import Optional, Dict, Any
+
+from session_context import get_session_context, clear_session_context
 
 import spacy
 
@@ -21,8 +25,16 @@ class JarvisAssistant:
     def __init__(self):
         self.name = ASSISTANT_NAME
         self.nlp = spacy.load("en_core_web_sm")
-        # --- CONTEXT HOLDER ---
-        self.conversation_context: Dict[str, Any] = {}
+        
+        # Setup logging
+        os.makedirs("logs", exist_ok=True)
+        self.logger = logging.getLogger("JarvisAssistant")
+        if not self.logger.handlers:
+            handler = logging.FileHandler("logs/assistant.log", encoding="utf-8")
+            handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+            self.logger.addHandler(handler)
+            self.logger.setLevel(logging.INFO)
+            
         self.skills: list[Skill] = self._load_skills()
 
 
@@ -47,7 +59,7 @@ class JarvisAssistant:
         command_lower = command.lower()
 
         if WAKE_WORD in command_lower and len(command_lower.replace(WAKE_WORD, "").strip()) < 4:
-            self.conversation_context.clear()
+            clear_session_context()
             return "Yes, Sir?", "AWAKE"
 
         # Construct cased command without wake word
@@ -60,8 +72,9 @@ class JarvisAssistant:
         doc = self.nlp(command_processed)
         has_pronoun = any(token.pos_ == "PRON" and token.text.lower() in ["he", "his", "him", "her", "it", "its"] for token in doc)
         
-        if has_pronoun and 'last_subject' in self.conversation_context:
-            subject = self.conversation_context['last_subject']
+        session_context = get_session_context()
+        if has_pronoun and 'last_subject' in session_context:
+            subject = session_context['last_subject']
             # Regex replacement with word boundaries to avoid replacing parts of other words (e.g. "history")
             command_with_context = command_processed
             for pronoun in ["his", "her", "its", "him", "he", "it"]:
@@ -69,12 +82,17 @@ class JarvisAssistant:
             print(f"Injecting context. New command: '{command_with_context}'")
             doc = self.nlp(command_with_context)
         else:
-            self.conversation_context.clear()
+            clear_session_context()
 
         for skill in self.skills:
             for intent in skill.intents():
                 if intent in doc.text.lower():
-                    response, new_state = skill.handle(doc.text.lower(), doc)
+                    start_time = time.time()
+                    try:
+                        response, new_state = skill.handle(doc.text.lower(), doc)
+                    finally:
+                        elapsed_ms = (time.time() - start_time) * 1000
+                        self.logger.info(f"Skill {skill.__class__.__name__} invoked. Elapsed time: {elapsed_ms:.2f}ms")
                     return response, new_state
         
         return "I'm not sure how to help with that yet.", "IDLE"

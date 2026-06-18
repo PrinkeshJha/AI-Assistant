@@ -1,9 +1,10 @@
 # app.py
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 import sys
 
 from assistant import JarvisAssistant
+from session_context import get_session_context, delete_session_context
 
 # Check if the spaCy model is downloaded, exit if not
 try:
@@ -15,7 +16,8 @@ except OSError:
     sys.exit(1)
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+# Explicitly use threading async mode for concurrent Socket.IO handler execution
+socketio = SocketIO(app, async_mode="threading")
 
 # Create a single, shared instance of your assistant
 jarvis = JarvisAssistant()
@@ -29,13 +31,21 @@ def home():
 @socketio.on('connect')
 def handle_connect():
     """Handles a new client connection with an onboarding message."""
-    print('Client connected')
+    print(f'Client connected: {request.sid}')
+    # Initialize session context
+    get_session_context(request.sid)
     # --- ONBOARDING MESSAGE ---
     welcome_message = f"Hello, I am {jarvis.name}. You can ask me for the weather, news, or say 'help' to see all commands."
     socketio.emit('assistant_response', {
         'message': welcome_message,
         'state': 'IDLE'
     })
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    """Handles client disconnection by cleaning up context."""
+    print(f'Client disconnected: {request.sid}')
+    delete_session_context(request.sid)
 
 @socketio.on('user_command')
 def handle_user_command(data):

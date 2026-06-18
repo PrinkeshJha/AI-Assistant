@@ -1,17 +1,22 @@
-# # Give this script name as config.py
+# config.py
+import os
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
 # --- API Keys ---
 # Get from https://gnews.io/
-NEWS_API_KEY = "YOUR API KEY"
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
 # Get from https://openweathermap.org/
-OPENWEATHER_API_KEY = "YOUR API KEY"
+OPENWEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY", "")
 # Get from https://console.picovoice.ai/
-PICOVOICE_ACCESS_KEY = "YOUR ACCESS KEY"
+PICOVOICE_ACCESS_KEY = os.environ.get("PICOVOICE_ACCESS_KEY", "")
 
 # --- Assistant Configuration ---
 WAKE_WORD = "jarvis"
 ASSISTANT_NAME = "Jarvis"
 
-
+# To find your microphone's index, run the 'list_mics.py' script from the setup instructions.
+# For most systems, leaving it as None will use the default microphone.
 MICROPHONE_INDEX = None

@@ -1,11 +1,10 @@
 import webbrowser
 import wikipedia
 from .base_skill import Skill
+from session_context import get_session_context
+from services.wiki_service import fetch_wiki_summary
 
-# Set a custom user agent to avoid Wikimedia blocking requests
-wikipedia.set_user_agent("JarvisAssistant/1.0 (contact@example.com)")
-
-class WebSkill(Skill):
+class WikiSkill(Skill):
     def intents(self):
         return ["open", "search", "what is", "who is"]
 
@@ -22,13 +21,13 @@ class WebSkill(Skill):
                 # --- SAVING CONTEXT ---
                 potential_subjects = [ent.text for ent in doc.ents if ent.label_ in ["PERSON", "ORG", "GPE"]]
                 if potential_subjects:
-                    self.assistant.conversation_context['last_subject'] = potential_subjects[0]
+                    get_session_context()['last_subject'] = potential_subjects[0]
                     print(f"Context saved: last_subject = {potential_subjects[0]}")
                 
-                result = wikipedia.summary(query, sentences=2)
+                result = fetch_wiki_summary(query)
                 return f"According to Wikipedia... {result}", "IDLE"
-            except Exception:
+            except (wikipedia.exceptions.PageError, wikipedia.exceptions.DisambiguationError):
                 return f"Sorry, I could not find any results for {query} on Wikipedia.", "IDLE"
-
-
-
+            except Exception as e:
+                self.assistant.logger.error(f"Wikipedia skill error: {e}", exc_info=True)
+                return "Wikipedia service is temporarily unavailable, please try again.", "IDLE"
