@@ -2,6 +2,9 @@ import webbrowser
 import wikipedia
 from .base_skill import Skill
 
+# Set a custom user agent to avoid Wikimedia blocking requests
+wikipedia.set_user_agent("JarvisAssistant/1.0 (contact@example.com)")
+
 class WebSkill(Skill):
     def intents(self):
         return ["open", "search", "what is", "who is"]

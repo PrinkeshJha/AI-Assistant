@@ -3,7 +3,7 @@ pyttsx3
 spacy
 pyjokes
 psutil
-wikipedia-api
+wikipedia
 requests
 Flask
 Flask-SocketIO

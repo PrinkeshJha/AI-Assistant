@@ -2,7 +2,7 @@
 
 
 # --- API Keys ---
-# Get from https://newsapi.org/
+# Get from https://gnews.io/
 NEWS_API_KEY = "YOUR API KEY"
 # Get from https://openweathermap.org/
 OPENWEATHER_API_KEY = "YOUR API KEY"

@@ -56,4 +56,4 @@ def handle_user_command(data):
 
 if __name__ == '__main__':
     print("Starting Flask server on http://127.0.0.1:5000")
-    socketio.run(app, debug=True)
+    socketio.run(app, debug=True, allow_unsafe_werkzeug=True)

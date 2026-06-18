@@ -1,6 +1,7 @@
 # assistant.py
 import importlib
 import os
+import re
 import sys
 from typing import Optional, Dict, Any
 
@@ -49,17 +50,22 @@ class JarvisAssistant:
             self.conversation_context.clear()
             return "Yes, Sir?", "AWAKE"
 
-        if WAKE_WORD in command_lower:
-            command_lower = command_lower.replace(WAKE_WORD, "").strip()
+        # Construct cased command without wake word
+        command_processed = command.strip()
+        wake_word_idx = command_lower.find(WAKE_WORD)
+        if wake_word_idx != -1:
+            command_processed = (command[:wake_word_idx] + command[wake_word_idx + len(WAKE_WORD):]).strip()
 
         # --- CONTEXT INJECTION LOGIC ---
-        doc = self.nlp(command_lower)
-        has_pronoun = any(token.pos_ == "PRON" and token.text in ["he", "his", "him", "her", "it", "its"] for token in doc)
+        doc = self.nlp(command_processed)
+        has_pronoun = any(token.pos_ == "PRON" and token.text.lower() in ["he", "his", "him", "her", "it", "its"] for token in doc)
         
         if has_pronoun and 'last_subject' in self.conversation_context:
             subject = self.conversation_context['last_subject']
-            # Simple pronoun replacement
-            command_with_context = command_lower.replace("his", subject).replace("her", subject).replace("its", subject).replace("it", subject).replace("he", subject).replace("him", subject)
+            # Regex replacement with word boundaries to avoid replacing parts of other words (e.g. "history")
+            command_with_context = command_processed
+            for pronoun in ["his", "her", "its", "him", "he", "it"]:
+                command_with_context = re.sub(rf"\b{pronoun}\b", subject, command_with_context, flags=re.IGNORECASE)
             print(f"Injecting context. New command: '{command_with_context}'")
             doc = self.nlp(command_with_context)
         else:
@@ -67,8 +73,8 @@ class JarvisAssistant:
 
         for skill in self.skills:
             for intent in skill.intents():
-                if intent in doc.text:
-                    response, new_state = skill.handle(doc.text, doc)
+                if intent in doc.text.lower():
+                    response, new_state = skill.handle(doc.text.lower(), doc)
                     return response, new_state
         
         return "I'm not sure how to help with that yet.", "IDLE"
