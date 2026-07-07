@@ -1,0 +1,25 @@
+{
+  "intent": "WikiSkill",
+  "examples": [
+    "wikipedia",
+    "search on wikipedia",
+    "look up on wikipedia",
+    "search for Albert Einstein",
+    "what is quantum physics",
+    "who is Barack Obama",
+    "tell me about history",
+    "tell me about science",
+    "what does photosynthesis mean",
+    "search wikipedia for artificial intelligence",
+    "wiki search",
+    "who is Marie Curie",
+    "search for solar system",
+    "what is the history of it",
+    "what is the history of Isaac Newton",
+    "what is the history of Marie Curie",
+    "what is the history of Albert Einstein",
+    "tell me the history of Isaac Newton",
+    "tell me about Isaac Newton",
+    "who was Marie Curie"
+  ]
+}

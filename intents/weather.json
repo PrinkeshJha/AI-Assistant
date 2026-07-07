@@ -1,0 +1,22 @@
+{
+  "intent": "WeatherSkill",
+  "examples": [
+    "weather",
+    "temperature",
+    "forecast",
+    "what is the weather like",
+    "will I need an umbrella today",
+    "is it raining in London",
+    "what is the weather forecast for tomorrow",
+    "how hot is it outside",
+    "tell me the weather",
+    "what is the temperature in Paris",
+    "is it cold outside",
+    "weather in Berlin",
+    "is it hot in Munich",
+    "will it pour in Seattle",
+    "will it pour today",
+    "how is it outside",
+    "weather forecast"
+  ]
+}

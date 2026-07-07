@@ -1,5 +1,3 @@
-speechrecognition
-pyttsx3
 spacy
 pyjokes
 psutil
@@ -7,3 +5,13 @@ wikipedia
 requests
 Flask
 Flask-SocketIO
+cachetools
+tenacity
+python-dotenv
+pytest
+sentence-transformers
+redis
+groq
+faiss-cpu
+pypdf
+python-docx

@@ -3,247 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jarvis - AI Assistant</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Jarvis — AI-powered voice and text assistant with semantic NLU, RAG document QA, multi-user session isolation, and real-time WebSocket communication.">
+    <meta name="theme-color" content="#050811">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <title>Jarvis - AI Voice & Text Assistant</title>
+    <!-- Socket.io client -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --orb-color: #3b82f6;
-            --listening-color: #22c55e;
-            --thinking-color: #eab308;
-            --speaking-color: #a855f7;
-        }
-
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-color);
-            color: #e5e7eb;
-            overflow: hidden;
-            position: relative;
-        }
-
-        #background-gradient {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -3;
-            background: linear-gradient(245deg, #0d1117, #1e293b, #3730a3, #0d1117);
-            background-size: 400% 400%;
-            animation: gradient-animation 20s ease infinite;
-        }
-        
-        @keyframes gradient-animation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-        .particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
-
-        #grid-overlay {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-            background-size: 50px 50px; opacity: 0.3;
-        }
-
-        .glass { background: rgba(31, 41, 55, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        
-        #ai-orb { position: relative; transition: all 0.5s ease-in-out, transform 0.3s ease; }
-        #ai-orb:hover { transform: translateY(-10px); }
-
-        #orb-image {
-            width: 95%; height: 95%; object-fit: cover; border-radius: 50%;
-            position: absolute; z-index: 10; opacity: 0.7;
-            transition: opacity 0.3s ease-in-out, transform 4s ease-in-out;
-            animation: breathe 8s ease-in-out infinite;
-        }
-        #ai-orb:hover #orb-image { opacity: 1; }
-
-        .orb-ring {
-            position: absolute; width: 100%; height: 100%; border-radius: 50%;
-            border: 2px solid transparent; animation-timing-function: linear;
-            animation-iteration-count: infinite; z-index: 11; transition: all 0.5s ease-in-out;
-        }
-        .ring-1 { animation-name: rotate; animation-duration: 4s; }
-        .ring-2 { animation-name: rotate-reverse; animation-duration: 6s; opacity: 0.7; }
-        .ring-3 { animation-name: rotate; animation-duration: 8s; opacity: 0.4; }
-
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes rotate-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-        @keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
-
-        .main-ui-element { opacity: 0; animation: fade-in-up 0.6s ease-out forwards; }
-        #main-title { animation-delay: 0.2s; } #ai-orb { animation-delay: 0.4s; }
-        #status-text { animation-delay: 0.6s; } #help-hint { animation-delay: 0.8s; }
-        #conversation-log { animation-delay: 1s; }
-
-        .state-idle { box-shadow: 0 0 30px 5px var(--orb-color); border: 2px solid var(--orb-color); }
-        .state-listening { box-shadow: 0 0 45px 10px var(--listening-color); border: 2px solid var(--listening-color); }
-        .state-thinking { box-shadow: 0 0 45px 10px var(--thinking-color); border: 2px solid var(--thinking-color); }
-        .state-speaking { box-shadow: 0 0 45px 10px var(--speaking-color); border: 2px solid var(--speaking-color); }
-        
-        #status-text { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
-        #conversation-log::-webkit-scrollbar { width: 6px; }
-        #conversation-log::-webkit-scrollbar-track { background: transparent; }
-        #conversation-log::-webkit-scrollbar-thumb { background-color: rgba(59, 130, 246, 0.6); border-radius: 10px; }
-
-        /* --- NEW: Audio Visualizer Styles --- */
-        #visualizer-container {
-            position: absolute; bottom: 2rem; left: 50%;
-            transform: translateX(-50%); width: 100%; max-width: 300px;
-            height: 60px; display: flex; justify-content: center;
-            align-items: flex-end; gap: 4px; opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-        .visualizer-bar {
-            width: 8px; background-color: var(--speaking-color);
-            border-radius: 5px; animation-name: dance;
-            animation-duration: 1.2s; animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-        }
-        @keyframes dance { 0%, 100% { height: 5%; opacity: 0.3; } 50% { height: 100%; opacity: 1; } }
-
-        /* --- NEW: Boot-up sequence styles --- */
-        #boot-screen { display: flex; } /* Shown by default */
-        #main-content { display: none; } /* Hidden by default */
-        @keyframes loading-bar { from { width: 0%; } to { width: 100%; } }
-        #loading-bar-inner { animation: loading-bar 2.5s ease-out forwards; }
-    </style>
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/jarvis.css') }}">
 </head>
 <body>
-    <div id="background-gradient"></div>
-    <div id="grid-overlay"></div>
+    <div class="background-canvas"></div>
+    <div class="grid-overlay"></div>
     <canvas class="particle-canvas" id="particle-canvas-1"></canvas>
     <canvas class="particle-canvas" id="particle-canvas-2"></canvas>
     
-    <!-- --- NEW: Boot-up Screen --- -->
-    <div id="boot-screen" class="min-h-screen w-full flex-col items-center justify-center p-4">
-        <h1 class="text-3xl font-bold tracking-wider text-gray-300">SYSTEM INITIALIZING</h1>
-        <div class="w-64 h-2 mt-4 bg-gray-700 rounded-full overflow-hidden">
-            <div id="loading-bar-inner" class="h-full bg-blue-500 rounded-full"></div>
-        </div>
-    </div>
-    
-    <!-- --- Main UI Content (Initially Hidden) --- -->
-    <div id="main-content" class="min-h-screen w-full flex-col items-center justify-center p-4 relative">
-        <h1 id="main-title" class="text-5xl font-bold tracking-wider text-gray-300 text-shadow-lg mb-8 main-ui-element">J.A.R.V.I.S</h1>
-        <div id="ai-orb" class="w-48 h-48 md:w-64 md:h-64 rounded-full flex items-center justify-center glass state-idle cursor-pointer main-ui-element">
-            <img id="orb-image" src="{{ url_for('static', filename='jarvis.png') }}" alt="AI Assistant Logo">
-            <div class="ring-1"></div> <div class="ring-2"></div> <div class="ring-3"></div>
-            <div class="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-blue-500/10 to-purple-600/10 opacity-70"></div>
-        </div>
-        <p id="status-text" class="mt-8 text-xl text-gray-300 font-medium tracking-wide main-ui-element">Connecting to server...</p>
-        <p id="help-hint" class="mt-2 text-sm text-gray-500 font-medium main-ui-element">Say "help" to see available commands.</p>
-        <div id="conversation-log" class="w-full max-w-2xl h-64 mt-4 p-4 rounded-lg glass overflow-y-auto space-y-4 main-ui-element"></div>
-    </div>
-    <div id="visualizer-container"></div>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="app-header glass-panel">
+            <div class="logo-container">
+                <h1>J.A.R.V.I.S</h1>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <button id="sidebar-toggle-btn" class="mobile-sidebar-toggle">Manage Docs</button>
+                <div id="connection-status-badge" class="connection-badge disconnected">
+                    <span class="badge-dot"></span>
+                    <span>Offline</span>
+                </div>
+            </div>
+        </header>
 
+        <!-- MAIN CHAT VIEWPORT -->
+        <main class="main-content glass-panel chat-viewport">
+            <!-- Scrollable Message Log -->
+            <div id="chat-message-log" class="message-log">
+                <!-- Conversation turns will inject here -->
+            </div>
+
+            <!-- Typed query input controls -->
+            <div class="input-panel">
+                <input type="text" id="chat-message-input" class="chat-input" placeholder="Type a command to Jarvis..." disabled>
+                <button id="chat-send-btn" class="send-button" disabled>Send</button>
+            </div>
+        </main>
+
+        <!-- SIDEBAR (Voice Orb + Document Manager) -->
+        <aside id="sidebar-panel" class="sidebar">
+            <!-- Voice Interactions -->
+            <section class="voice-section glass-panel state-idle">
+                <h2 class="voice-title">Voice Link</h2>
+                
+                <div id="ai-orb" class="orb-container">
+                    <div id="orb-glow-elem" class="orb-glow"></div>
+                    <div class="orb-ring r1"></div>
+                    <div class="orb-ring r2"></div>
+                    <div class="orb-ring r3"></div>
+                    <div class="orb-element">
+                        <img src="{{ url_for('static', filename='jarvis.png') }}" class="orb-image" alt="Jarvis Orb">
+                    </div>
+                </div>
+
+                <div id="orb-status-text" class="voice-state-text">SYSTEM READY</div>
+                <div id="orb-hint-text" class="voice-hint">Tap Orb or say "Jarvis" to begin</div>
+                
+                <!-- Equilizer visualization when speaking -->
+                <div id="audio-visualizer" class="visualizer-container"></div>
+                
+                <button id="orb-interrupt-btn" class="interrupt-btn">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    </svg>
+                    <span>Interrupt Speech</span>
+                </button>
+            </section>
+
+            <!-- Document Indexing / RAG Drawer -->
+            <section class="document-section glass-panel">
+                <div class="section-header">
+                    <h2>Indexed Knowledge</h2>
+                </div>
+
+                <!-- Drag & Drop upload panel -->
+                <div id="upload-dropzone" class="dropzone">
+                    <div class="dropzone-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                    <div class="dropzone-text">Upload Knowledge Notes</div>
+                    <div class="dropzone-subtext">PDF, TXT, or DOCX (Max 10MB)</div>
+                    <input type="file" id="upload-file-input" accept=".txt,.pdf,.docx" style="display: none;">
+                </div>
+
+                <!-- Active Uploading statuses -->
+                <div id="active-uploads-container" class="uploads-container"></div>
+
+                <!-- List of current files -->
+                <div id="indexed-documents-list" class="documents-scroll">
+                    <!-- Session docs will list here -->
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <!-- Background Particle Script -->
     <script>
-        const orb = document.getElementById('ai-orb');
-        const statusText = document.getElementById('status-text');
-        const conversationLog = document.getElementById('conversation-log');
-        const helpHint = document.getElementById('help-hint');
-        const visualizerContainer = document.getElementById('visualizer-container');
-        const socket = io();
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        let recognition;
-
-        function updateUI(newState, text) {
-            statusText.textContent = text;
-            let visualState = newState.toLowerCase();
-            if (visualState === 'awake') visualState = 'listening';
-            orb.className = "w-48 h-48 md:w-64 md:h-64 rounded-full flex items-center justify-center glass cursor-pointer main-ui-element";
-            orb.classList.add(`state-${visualState}`);
-            
-            // --- NEW: Control visualizer visibility ---
-            if (visualState === 'speaking') {
-                visualizerContainer.style.opacity = '1';
-            } else {
-                visualizerContainer.style.opacity = '0';
-            }
-        }
-
-        // --- All other JavaScript functions (addMessage, speak, startListening, etc.) remain the same ---
-        function addMessage(sender, message) {
-            const isUser = sender === 'You';
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `w-full flex ${isUser ? 'justify-end' : 'justify-start'}`;
-            const bubble = document.createElement('div');
-            bubble.className = `max-w-xs md:max-w-md p-3 ${isUser ? 'bg-blue-600 rounded-l-xl rounded-t-xl' : 'bg-gray-700 rounded-r-xl rounded-t-xl'}`;
-            bubble.innerHTML = `<p class="font-bold text-sm mb-1 ${isUser ? 'text-blue-200' : 'text-gray-300'}">${sender}</p><p>${message}</p>`;
-            bubble.classList.add('message-bubble'); // Add animation class
-            messageDiv.appendChild(bubble);
-            conversationLog.appendChild(messageDiv);
-            conversationLog.scrollTop = conversationLog.scrollHeight;
-        }
-
-        function speak(text, onEndCallback) {
-            updateUI('SPEAKING', 'Speaking...');
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.onend = onEndCallback;
-            window.speechSynthesis.speak(utterance);
-        }
-
-        function startListening() {
-            if (recognition) {
-                try {
-                    updateUI('LISTENING', 'Listening...');
-                    helpHint.style.display = 'none';
-                    recognition.start();
-                } catch(e) { console.log("Recognition already active."); }
-            }
-        }
-        
-        // --- Initialize visualizer bars ---
-        for (let i = 0; i < 32; i++) {
-            const bar = document.createElement('div');
-            bar.className = 'visualizer-bar';
-            bar.style.animationDelay = `${Math.random() * 1.2}s`;
-            visualizerContainer.appendChild(bar);
-        }
-
-        // --- NEW: Boot-up sequence logic ---
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('boot-screen').style.display = 'none';
-                document.getElementById('main-content').style.display = 'flex';
-            }, 3000); // Wait for loading bar to finish
-        });
-
-        if (SpeechRecognition) {
-            recognition = new SpeechRecognition();
-            recognition.continuous = false;
-            recognition.lang = 'en-US';
-            recognition.interimResults = false;
-            orb.addEventListener('click', startListening);
-            recognition.onresult = (event) => {
-                const command = event.results[0][0].transcript;
-                addMessage('You', command);
-                updateUI('THINKING', 'Processing...');
-                socket.emit('user_command', { command: command });
-            };
-            recognition.onerror = (event) => {
-                console.error('Speech recognition error:', event.error);
-                updateUI('IDLE', 'Sorry, I had trouble listening.');
-            };
-        } else {
-            updateUI('IDLE', 'Speech Recognition not supported.');
-            helpHint.style.display = 'none';
-        }
-
-        socket.on('connect', () => console.log('Connected to server!'));
-        socket.on('assistant_response', (data) => {
-            console.log('Received response from server:', data);
-            addMessage('Jarvis', data.message);
-            speak(data.message, () => {
-                if (data.state === 'AWAKE') startListening();
-                else {
-                    updateUI('IDLE', 'Click the orb to speak.');
-                    helpHint.style.display = 'block';
-                }
-            });
-        });
-
-        // --- Particle Background Script (remains the same) ---
         function createParticleSystem(canvasId, particleCount, color, speedFactor) {
             const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let particlesArray;
             function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
@@ -262,7 +131,7 @@
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 1.5) + 1;
                     let x = Math.random() * (innerWidth - size * 2) + size; let y = Math.random() * (innerHeight - size * 2) + size;
-                    let dirX = (Math.random() * 0.4 - 0.2) * speedFactor; let dirY = (Math.random() * 0.4 - 0.2) * speedFactor;
+                    let dirX = (Math.random() * 0.3 - 0.15) * speedFactor; let dirY = (Math.random() * 0.3 - 0.15) * speedFactor;
                     particlesArray.push(new Particle(x, y, dirX, dirY, size, color));
                 }
             }
@@ -270,9 +139,11 @@
             window.addEventListener('resize', () => { setCanvasSize(); init(); });
             setCanvasSize(); init(); animate();
         }
-        createParticleSystem('particle-canvas-1', 12000, 'rgba(255, 255, 255, 0.1)', 0.5);
-        createParticleSystem('particle-canvas-2', 20000, 'rgba(59, 130, 246, 0.3)', 1);
+        createParticleSystem('particle-canvas-1', 14000, 'rgba(255, 255, 255, 0.08)', 0.4);
+        createParticleSystem('particle-canvas-2', 22000, 'rgba(59, 130, 246, 0.22)', 0.8);
     </script>
+
+    <!-- App Entry Point Module -->
+    <script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
-

@@ -1,6 +1,6 @@
-import requests
-from config import OPENWEATHER_API_KEY
 from .base_skill import Skill
+from services.weather_service import fetch_weather
+import requests
 
 class WeatherSkill(Skill):
     def intents(self):
@@ -14,16 +14,18 @@ class WeatherSkill(Skill):
         if not location:
             return "I'm not sure which city you're asking about.", "IDLE"
 
-        url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={OPENWEATHER_API_KEY}&units=metric"
         try:
-            response = requests.get(url)
-            response.raise_for_status()
-            data = response.json()
-            temp = data['main']['temp']
-            desc = data['weather'][0]['description']
-            return f"The current weather in {location} is {desc} with a temperature of {temp} degrees Celsius.", "IDLE"
+            temp, desc = fetch_weather(location)
+            from config import LLM_FORMAT_SKILLS
+            if LLM_FORMAT_SKILLS:
+                from services import llm_service
+                prompt = f"Format this weather data naturally as Jarvis: Location: {location}, Temperature: {temp}°C, Description: {desc}."
+                response, tokens_used, latency = llm_service.ask(prompt)
+                return response, "IDLE"
+            else:
+                return f"The current weather in {location} is {desc} with a temperature of {temp} degrees Celsius.", "IDLE"
         except requests.exceptions.HTTPError:
             return f"Sorry, I couldn't find the weather for {location}.", "IDLE"
         except Exception as e:
-            print(f"Weather skill error: {e}")
-            return "Sorry, an error occurred while fetching the weather.", "IDLE"
+            self.assistant.logger.error(f"Weather skill error: {e}", exc_info=True)
+            return "Weather service is temporarily unavailable, please try again.", "IDLE"

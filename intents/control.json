@@ -1,0 +1,14 @@
+{
+  "intent": "ControlSkill",
+  "examples": [
+    "stop",
+    "exit",
+    "quit",
+    "goodbye",
+    "go to sleep",
+    "goodbye jarvis",
+    "shut down",
+    "close the assistant",
+    "exit now"
+  ]
+}
