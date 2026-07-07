@@ -12,6 +12,11 @@ NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
 OPENWEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY", "")
 # Get from https://console.picovoice.ai/
 PICOVOICE_ACCESS_KEY = os.environ.get("PICOVOICE_ACCESS_KEY", "")
+# Get from https://console.groq.com/
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+
+# Toggle to naturally phrase structured skill outputs (e.g. weather) via LLM
+LLM_FORMAT_SKILLS = False
 
 # --- Assistant Configuration ---
 WAKE_WORD = "jarvis"

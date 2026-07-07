@@ -57,7 +57,6 @@ class RedisStore:
                 password=password,
                 socket_connect_timeout=2,
                 socket_timeout=2,
-                retry_on_timeout=False,
                 health_check_interval=0,
                 decode_responses=True,
             )

@@ -1003,3 +1003,58 @@ Exception: Simulated skill crash
 2026-07-07 09:51:04,187 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
 2026-07-07 09:51:10,077 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
 2026-07-07 09:51:10,077 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:14,486 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-07-07 09:56:14,538 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'RAGSkill': 0.2213228940963745, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-07-07 09:56:20,409 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 5871.42ms
+2026-07-07 09:56:20,418 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-07-07 09:56:20,444 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'RAGSkill': 0.11485123634338379, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-07-07 09:56:26,390 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 5946.34ms
+2026-07-07 09:56:29,052 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'RAGSkill': 0.09030185639858246, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-07-07 09:56:29,052 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:29,111 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'RAGSkill': 0.1701805293560028, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-07-07 09:56:29,111 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:29,159 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'RAGSkill': 0.34907129406929016, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-07-07 09:56:29,159 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:29,184 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-07-07 09:56:31,902 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-07 09:56:34,964 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-07 09:56:34,964 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-07-07 09:56:34,964 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-07-07 09:56:34,964 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:37,905 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-07 09:56:37,942 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-07-07 09:56:37,942 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:40,625 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'RAGSkill': 0.07884986698627472, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-07-07 09:56:40,625 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:42,540 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-07-07 09:56:44,791 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-07-07 09:56:47,460 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'RAGSkill': 0.10305939614772797, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-07-07 09:56:47,460 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:49,845 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'RAGSkill': 0.08176244795322418, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-07-07 09:56:49,845 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:49,865 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-07-07 09:56:49,918 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'RAGSkill': 0.1049351841211319, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-07-07 09:56:49,918 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:49,946 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-07-07 09:56:49,982 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'RAGSkill': 0.06933944672346115, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-07-07 09:56:49,990 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:52,490 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'RAGSkill': 0.2463657557964325, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-07-07 09:56:52,490 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 190, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-07-07 09:56:52,490 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:56:59,839 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-07-07 09:56:59,839 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:57:05,108 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-07 09:57:05,111 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms

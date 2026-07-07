@@ -1,6 +1,10 @@
 config.py
 venv/
 __pycache__/
+*.pyc
 .env
 documents/
 logs/metrics.db
+logs/assistant.log
+.pytest_cache/
+.agents/
