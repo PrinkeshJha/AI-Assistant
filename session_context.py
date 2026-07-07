@@ -1,7 +1,9 @@
 import threading
 from flask import request, has_request_context
+from memory.redis_store import RedisStore
 
-# Thread-safe context storage
+# Thread-safe context storage backed by Redis/local fallback
+store = RedisStore()
 session_contexts = {}
 context_lock = threading.Lock()
 
@@ -19,7 +21,7 @@ def get_session_context(sid=None):
             
     with context_lock:
         if sid not in session_contexts:
-            session_contexts[sid] = {}
+            session_contexts[sid] = store.get_context(sid)
         return session_contexts[sid]
 
 def clear_session_context(sid=None):
@@ -35,6 +37,8 @@ def clear_session_context(sid=None):
     with context_lock:
         if sid in session_contexts:
             session_contexts[sid].clear()
+        else:
+            store.clear_context(sid)
 
 def delete_session_context(sid):
     """
@@ -43,3 +47,4 @@ def delete_session_context(sid):
     with context_lock:
         if sid in session_contexts:
             del session_contexts[sid]
+        store.delete_context(sid)

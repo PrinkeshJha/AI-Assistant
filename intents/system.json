@@ -1,0 +1,15 @@
+{
+  "intent": "SystemSkill",
+  "examples": [
+    "battery",
+    "notepad",
+    "calculator",
+    "check the battery level",
+    "how much battery do I have left",
+    "open notepad",
+    "launch calculator",
+    "start notepad app",
+    "open the calculator",
+    "system battery status"
+  ]
+}

@@ -58,3 +58,19 @@ def test_weather_retry(monkeypatch):
     temp, desc = fetch_weather("Hamburg")
     assert temp == 15.0
     assert call_count == 3
+
+def test_weather_llm_collaboration(monkeypatch):
+    from assistant import JarvisAssistant
+    from unittest.mock import patch
+    assistant = JarvisAssistant()
+    
+    monkeypatch.setattr("config.LLM_FORMAT_SKILLS", True)
+    
+    with patch("skills.weather_skill.fetch_weather", return_value=(20.0, "sunny")), \
+         patch("services.llm_service.ask", return_value=("It is 20 degrees and sunny in Munich, Sir.", 35, 0.1)) as mock_ask:
+        
+        with patch.object(assistant.classifier, "classify", return_value={"WeatherSkill": 0.9}):
+            res, state = assistant.process_command("what is the weather in Munich")
+            assert "It is 20 degrees and sunny in Munich, Sir." in res
+            assert state == "IDLE"
+            mock_ask.assert_called_once()

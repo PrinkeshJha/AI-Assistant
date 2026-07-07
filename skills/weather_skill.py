@@ -16,7 +16,14 @@ class WeatherSkill(Skill):
 
         try:
             temp, desc = fetch_weather(location)
-            return f"The current weather in {location} is {desc} with a temperature of {temp} degrees Celsius.", "IDLE"
+            from config import LLM_FORMAT_SKILLS
+            if LLM_FORMAT_SKILLS:
+                from services import llm_service
+                prompt = f"Format this weather data naturally as Jarvis: Location: {location}, Temperature: {temp}°C, Description: {desc}."
+                response, tokens_used, latency = llm_service.ask(prompt)
+                return response, "IDLE"
+            else:
+                return f"The current weather in {location} is {desc} with a temperature of {temp} degrees Celsius.", "IDLE"
         except requests.exceptions.HTTPError:
             return f"Sorry, I couldn't find the weather for {location}.", "IDLE"
         except Exception as e:

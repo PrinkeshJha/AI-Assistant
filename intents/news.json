@@ -1,0 +1,15 @@
+{
+  "intent": "NewsSkill",
+  "examples": [
+    "news",
+    "headlines",
+    "tell me the news",
+    "what are the top headlines today",
+    "what is happening in the world",
+    "give me the latest news updates",
+    "show me today's news headlines",
+    "what's in the news today",
+    "news headlines",
+    "what is the latest news in India"
+  ]
+}

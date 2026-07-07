@@ -1,0 +1,15 @@
+{
+  "intent": "RAGSkill",
+  "examples": [
+    "explain LR parsing from my notes",
+    "what do my documents say about quantum gravity",
+    "search my notes for machine learning",
+    "summarize my notes",
+    "what does my uploaded file say about the schedule",
+    "tell me what is in my document",
+    "from my notes what is the definition of artificial intelligence",
+    "check my uploaded docs for database indexes",
+    "search my files for the meeting agenda",
+    "summarize my document contents"
+  ]
+}

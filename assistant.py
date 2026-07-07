@@ -8,6 +8,16 @@ import time
 from typing import Optional, Dict, Any
 
 from session_context import get_session_context, clear_session_context
+from classifier.embedding_classifier import EmbeddingClassifier
+from context.context_manager import (
+    resolve_pronouns,
+    is_ellipsis_or_fragment,
+    merge_context,
+    update_entities_from_doc,
+    add_to_history
+)
+from analytics.metrics import log_metric
+from services import llm_service
 
 import spacy
 
@@ -34,8 +44,22 @@ class JarvisAssistant:
             handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
             self.logger.addHandler(handler)
             self.logger.setLevel(logging.INFO)
-            
         self.skills: list[Skill] = self._load_skills()
+        self.classifier = EmbeddingClassifier()
+
+    def _check_and_summarize(self, session_context):
+        history = session_context.get('history', [])
+        if len(history) >= 5:
+            try:
+                self.logger.info("Turn history threshold reached (>= 5). Summarizing conversation...")
+                existing_summary = session_context.get('summary')
+                new_summary = llm_service.summarize_history(history, existing_summary)
+                session_context['summary'] = new_summary
+                # Keep only the last turn to maintain continuity
+                session_context['history'] = history[-1:]
+                self.logger.info(f"Summarization completed. New summary: {new_summary}")
+            except Exception as e:
+                self.logger.error(f"Error during context summarization: {e}")
 
 
     def _load_skills(self) -> list[Skill]:
@@ -60,6 +84,10 @@ class JarvisAssistant:
 
         if WAKE_WORD in command_lower and len(command_lower.replace(WAKE_WORD, "").strip()) < 4:
             clear_session_context()
+            # Initialize context to set source/confidence
+            ctx = get_session_context()
+            ctx['last_source'] = 'skill'
+            ctx['last_confidence'] = 1.0
             return "Yes, Sir?", "AWAKE"
 
         # Construct cased command without wake word
@@ -68,31 +96,139 @@ class JarvisAssistant:
         if wake_word_idx != -1:
             command_processed = (command[:wake_word_idx] + command[wake_word_idx + len(WAKE_WORD):]).strip()
 
-        # --- CONTEXT INJECTION LOGIC ---
-        doc = self.nlp(command_processed)
-        has_pronoun = any(token.pos_ == "PRON" and token.text.lower() in ["he", "his", "him", "her", "it", "its"] for token in doc)
-        
         session_context = get_session_context()
-        if has_pronoun and 'last_subject' in session_context:
-            subject = session_context['last_subject']
-            # Regex replacement with word boundaries to avoid replacing parts of other words (e.g. "history")
-            command_with_context = command_processed
-            for pronoun in ["his", "her", "its", "him", "he", "it"]:
-                command_with_context = re.sub(rf"\b{pronoun}\b", subject, command_with_context, flags=re.IGNORECASE)
-            print(f"Injecting context. New command: '{command_with_context}'")
-            doc = self.nlp(command_with_context)
-        else:
-            clear_session_context()
 
-        for skill in self.skills:
-            for intent in skill.intents():
-                if intent in doc.text.lower():
+        # Retrieve previous query history to resolve ellipsis
+        history = session_context.get('history', [])
+        prev_query = history[-1]['query'] if history else None
+
+        # 1. Resolve pronouns
+        command_resolved = resolve_pronouns(command_processed, session_context)
+        if command_resolved != command_processed:
+            print(f"Injecting context (pronouns). New command: '{command_resolved}'")
+            self.logger.info(f"Pronoun resolved: '{command_processed}' -> '{command_resolved}'")
+
+        # 2. Resolve ellipsis/fragments
+        if prev_query and is_ellipsis_or_fragment(command_resolved, self.nlp):
+            command_merged = merge_context(prev_query, command_resolved, self.nlp)
+            print(f"Injecting context (ellipsis). New command: '{command_merged}'")
+            self.logger.info(f"Ellipsis merged: '{command_resolved}' -> '{command_merged}'")
+            command_resolved = command_merged
+
+        doc = self.nlp(command_resolved)
+
+        # 3. Classify query intent using Embedding Classifier
+        scores = self.classifier.classify(command_resolved)
+        self.logger.info(f"Intent classification scores: {scores}")
+
+        # Rank intents
+        sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+        best_intent = None
+        best_score = 0.0
+        if sorted_scores:
+            best_intent, best_score = sorted_scores[0]
+
+        # 4. Handle confidence threshold of 0.65
+        if best_score < 0.65:
+            # Gather top 2-3 plausible intents (confidence score >= 0.3)
+            plausible_intents = [intent for intent, score in sorted_scores if score >= 0.3]
+            top_plausible = plausible_intents[:3]
+
+            if len(top_plausible) >= 2:
+                if len(top_plausible) == 2:
+                    suggestion = f"Did you mean {top_plausible[0]} or {top_plausible[1]}?"
+                else:
+                    suggestion = f"Did you mean {top_plausible[0]}, {top_plausible[1]}, or {top_plausible[2]}?"
+                response = f"I'm not sure. {suggestion}"
+                success_status = "CLARIFICATION"
+                log_metric(
+                    query=command_processed,
+                    detected_intent=best_intent if best_intent else "None",
+                    confidence=best_score,
+                    resolved_skill="None",
+                    success_status=success_status
+                )
+                session_context['last_source'] = 'clarification'
+                session_context['last_confidence'] = float(best_score)
+                return response, "IDLE"
+            else:
+                try:
+                    summary = session_context.get('summary')
+                    response, tokens_used, latency = llm_service.ask(command_resolved, history, summary)
+                    success_status = "FALLBACK"
+                    
+                    update_entities_from_doc(doc, session_context)
+                    add_to_history(command_resolved, "LLMFallback", [ent.text for ent in doc.ents], session_context, response)
+                    self._check_and_summarize(session_context)
+                except Exception as e:
+                    self.logger.error(f"LLM fallback failed: {e}", exc_info=True)
+                    response = "I'm not sure how to help with that yet."
+                    success_status = "FALLBACK"
+                    tokens_used, latency = 0, 0.0
+
+                log_metric(
+                    query=command_processed,
+                    detected_intent=best_intent if best_intent else "None",
+                    confidence=best_score,
+                    resolved_skill="None",
+                    success_status=success_status,
+                    llm_latency=latency,
+                    llm_tokens_used=tokens_used,
+                    is_rag_query=0
+                )
+                session_context['last_source'] = 'llm'
+                session_context['last_confidence'] = float(best_score)
+                return response, "IDLE"
+
+        # 5. Dispatch if confidence >= 0.65
+        if best_intent:
+            for skill in self.skills:
+                if skill.__class__.__name__ == best_intent:
                     start_time = time.time()
                     try:
+                        # Extract skill response
                         response, new_state = skill.handle(doc.text.lower(), doc)
+                        success_status = "SUCCESS"
+                        
+                        # Store updated context entities and history upon successful execution
+                        update_entities_from_doc(doc, session_context)
+                        add_to_history(command_resolved, best_intent, [ent.text for ent in doc.ents], session_context, response)
+                        self._check_and_summarize(session_context)
+                    except Exception as e:
+                        self.logger.error(f"Skill execution failed for {best_intent}: {e}", exc_info=True)
+                        response = "Sorry, I encountered an error while processing that request."
+                        new_state = "IDLE"
+                        success_status = "ERROR"
                     finally:
                         elapsed_ms = (time.time() - start_time) * 1000
                         self.logger.info(f"Skill {skill.__class__.__name__} invoked. Elapsed time: {elapsed_ms:.2f}ms")
+                        
+                    # Retrieve LLM metrics if populated by RAGSkill or other skills
+                    llm_latency = session_context.pop('llm_latency', None)
+                    llm_tokens = session_context.pop('llm_tokens_used', None)
+                    is_rag = session_context.pop('is_rag_query', 0)
+                    
+                    log_metric(
+                        query=command_processed,
+                        detected_intent=best_intent,
+                        confidence=best_score,
+                        resolved_skill=skill.__class__.__name__,
+                        success_status=success_status,
+                        llm_latency=llm_latency,
+                        llm_tokens_used=llm_tokens,
+                        is_rag_query=is_rag
+                    )
+                    session_context['last_source'] = 'rag' if best_intent == 'RAGSkill' else 'skill'
+                    session_context['last_confidence'] = float(best_score)
                     return response, new_state
-        
+
+        log_metric(
+            query=command_processed,
+            detected_intent="None",
+            confidence=0.0,
+            resolved_skill="None",
+            success_status="FALLBACK"
+        )
+        session_context['last_source'] = 'llm'
+        session_context['last_confidence'] = 0.0
         return "I'm not sure how to help with that yet.", "IDLE"

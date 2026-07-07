@@ -21,3 +21,985 @@
 2026-06-18 16:13:52,139 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
 2026-06-18 16:13:52,147 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
 2026-06-18 16:13:52,153 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-18 17:59:00,411 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.08127961307764053, 'HelpSkill': 0.11638021469116211, 'FunSkill': 0.10789991915225983, 'NewsSkill': 0.248001366853714, 'SystemSkill': 0.11430801451206207, 'TimeSkill': 0.22085051238536835, 'WeatherSkill': 0.09246043860912323, 'WikiSkill': 0.36721569299697876}
+2026-06-18 17:59:05,916 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 5504.04ms
+2026-06-18 17:59:05,946 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.08127961307764053, 'HelpSkill': 0.11638021469116211, 'FunSkill': 0.10789991915225983, 'NewsSkill': 0.248001366853714, 'SystemSkill': 0.11430801451206207, 'TimeSkill': 0.22085051238536835, 'WeatherSkill': 0.09246043860912323, 'WikiSkill': 0.36721569299697876}
+2026-06-18 17:59:10,174 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4228.05ms
+2026-06-18 17:59:18,699 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.8838289380073547, 'WikiSkill': 0.058468956500291824}
+2026-06-18 17:59:18,699 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 17:59:18,726 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.8667055368423462, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.23002426326274872}
+2026-06-18 17:59:18,727 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 1.00ms
+2026-06-18 17:59:18,753 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12892769277095795, 'WikiSkill': 0.9317069053649902}
+2026-06-18 17:59:18,753 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:08:39,801 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-18 18:08:39,825 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 0.42684242129325867}
+2026-06-18 18:08:47,633 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.8838289380073547, 'WikiSkill': 0.058468956500291824}
+2026-06-18 18:08:47,634 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:08:47,684 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.8667055368423462, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.23002426326274872}
+2026-06-18 18:08:47,684 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:08:47,751 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12892769277095795, 'WikiSkill': 0.9317069053649902}
+2026-06-18 18:08:47,751 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:08:55,733 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 0.422768771648407, 'WikiSkill': 0.10725431144237518}
+2026-06-18 18:09:03,218 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-18 18:09:10,416 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-18 18:09:18,050 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.6202865242958069, 'WikiSkill': 0.08512440323829651}
+2026-06-18 18:09:25,550 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.5153073072433472, 'WikiSkill': 0.10532495379447937}
+2026-06-18 18:11:03,771 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-18 18:11:03,810 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-06-18 18:11:10,017 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 6206.41ms
+2026-06-18 18:11:10,032 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-06-18 18:11:10,083 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-06-18 18:11:14,277 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4193.94ms
+2026-06-18 18:11:22,560 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-06-18 18:11:22,560 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:11:22,587 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-06-18 18:11:22,587 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:11:22,629 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-06-18 18:11:22,629 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:11:30,717 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-06-18 18:11:30,717 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:11:38,732 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-18 18:11:46,452 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-18 18:11:53,872 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-06-18 18:11:53,872 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:12:01,682 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-06-18 18:12:01,682 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:12:01,706 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-06-18 18:12:01,734 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-06-18 18:12:01,734 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-18 18:12:01,770 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-06-18 18:12:01,780 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-06-18 18:12:01,780 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:19:53,713 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-30 15:19:53,814 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-06-30 15:20:05,201 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 11386.63ms
+2026-06-30 15:20:05,241 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-06-30 15:20:05,286 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-06-30 15:20:09,522 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4234.27ms
+2026-06-30 15:20:17,497 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-06-30 15:20:17,497 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:17,546 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-06-30 15:20:17,546 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:17,587 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-06-30 15:20:17,587 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:24,961 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-06-30 15:20:24,961 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:32,879 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-30 15:20:40,489 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-30 15:20:48,165 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-06-30 15:20:48,165 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:56,060 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-06-30 15:20:56,060 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:56,072 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-06-30 15:20:56,130 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-06-30 15:20:56,130 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:20:56,161 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-06-30 15:20:56,216 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-06-30 15:20:56,216 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:25:31,464 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-30 15:25:31,552 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-06-30 15:25:36,331 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4779.65ms
+2026-06-30 15:25:36,366 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-06-30 15:25:36,432 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-06-30 15:25:40,925 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4493.09ms
+2026-06-30 15:25:48,696 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-06-30 15:25:48,696 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:25:49,356 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-06-30 15:25:49,357 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:25:49,439 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-06-30 15:25:49,439 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:25:56,812 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-06-30 15:25:56,812 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:26:04,595 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-30 15:26:12,029 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-30 15:26:19,729 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-06-30 15:26:19,729 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:26:27,294 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-06-30 15:26:27,294 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:26:27,309 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-06-30 15:26:27,344 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-06-30 15:26:27,344 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:26:27,377 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-06-30 15:26:27,411 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-06-30 15:26:27,411 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:26:35,078 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-06-30 15:26:35,078 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 145, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-06-30 15:26:35,098 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 20.59ms
+2026-06-30 15:47:07,277 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 15:48:52,725 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-30 15:48:52,775 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-06-30 15:48:57,387 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4611.59ms
+2026-06-30 15:48:57,422 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-06-30 15:48:57,518 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-06-30 15:49:01,887 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4368.10ms
+2026-06-30 15:49:09,798 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-06-30 15:49:09,798 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:49:09,832 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-06-30 15:49:09,847 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:49:09,883 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-06-30 15:49:09,883 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:49:09,901 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-06-30 15:49:17,931 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 15:49:25,848 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-06-30 15:49:25,848 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:49:33,363 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-30 15:49:40,775 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-30 15:49:40,775 - JarvisAssistant - WARNING - GROQ_API_KEY is not set. LLM calls will fail.
+2026-06-30 15:49:43,167 - JarvisAssistant - ERROR - Groq API call failed after 1.92s: Connection error.
+2026-06-30 15:49:45,766 - JarvisAssistant - ERROR - Groq API call failed after 1.59s: Connection error.
+2026-06-30 15:49:49,381 - JarvisAssistant - ERROR - Groq API call failed after 1.61s: Connection error.
+2026-06-30 15:49:49,381 - JarvisAssistant - ERROR - LLM fallback failed: Connection error.
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 86, in handle_request
+    self._send_request_headers(**kwargs)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 144, in _send_request_headers
+    with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.LocalProtocolError: Illegal header value b'Bearer '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.LocalProtocolError: Illegal header value b'Bearer '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 137, in process_command
+    response, tokens_used, latency = llm_service.ask(command_resolved, history, summary)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\llm_service.py", line 80, in ask
+    raise e
+  File "E:\AI-Assistant\services\llm_service.py", line 64, in ask
+    completion = client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\resources\chat\completions.py", line 462, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1039, in request
+    raise APIConnectionError(request=request) from err
+groq.APIConnectionError: Connection error.
+2026-06-30 15:49:57,571 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-06-30 15:49:57,571 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:50:04,770 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-06-30 15:50:04,770 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:50:04,781 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-06-30 15:50:04,813 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-06-30 15:50:04,813 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:50:04,829 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-06-30 15:50:04,878 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-06-30 15:50:04,878 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 15:50:12,629 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-06-30 15:50:12,629 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 164, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-06-30 15:50:12,637 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 8.42ms
+2026-06-30 16:11:59,780 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-06-30 16:11:59,784 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 4.11ms
+2026-06-30 16:18:38,944 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-06-30 16:18:38,945 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 1.01ms
+2026-06-30 16:24:40,544 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:24:41,829 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:24:41,829 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-06-30 16:24:41,829 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-06-30 16:24:41,829 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:27:42,363 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:27:42,363 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:32:09,593 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:32:10,858 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:32:10,858 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-06-30 16:32:10,858 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-06-30 16:32:10,858 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:32:12,665 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:32:12,683 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-06-30 16:32:12,683 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:34:30,478 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:34:31,760 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:34:31,760 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-06-30 16:34:31,760 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-06-30 16:34:31,760 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:34:33,209 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:34:33,244 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-06-30 16:34:33,244 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:41:16,281 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:41:17,771 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:41:17,775 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-06-30 16:41:17,776 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-06-30 16:41:17,776 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 5.07ms
+2026-06-30 16:41:19,176 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:41:19,209 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-06-30 16:41:19,209 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:42:53,878 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-30 16:42:53,939 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'RAGSkill': 0.2213228940963745, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-06-30 16:43:01,213 - JarvisAssistant - ERROR - Wikipedia skill error: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\requests\models.py", line 976, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\skills\wiki_skill.py", line 27, in handle
+    result = fetch_wiki_summary(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\wiki_service.py", line 34, in fetch_wiki_summary
+    summary = _fetch_wiki_api(query)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\wiki_service.py", line 26, in _fetch_wiki_api
+    return wikipedia.summary(query, sentences=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 231, in summary
+    page_info = page(title, auto_suggest=auto_suggest, redirect=redirect)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 270, in page
+    results, suggestion = search(title, results=1, suggestion=True)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 103, in search
+    raw_results = _wiki_request(search_params)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 742, in _wiki_request
+    return r.json()
+           ^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\requests\models.py", line 980, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-06-30 16:43:01,240 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 7300.63ms
+2026-06-30 16:43:01,282 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-06-30 16:43:01,346 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'RAGSkill': 0.11485123634338379, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-06-30 16:43:06,032 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4683.11ms
+2026-06-30 16:43:08,035 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'RAGSkill': 0.09030185639858246, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-06-30 16:43:08,035 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:43:08,107 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'RAGSkill': 0.1701805293560028, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-06-30 16:43:08,107 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:43:08,203 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'RAGSkill': 0.34907129406929016, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-06-30 16:43:08,204 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 1.01ms
+2026-06-30 16:43:08,260 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-06-30 16:43:09,921 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:43:11,558 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:43:11,559 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-06-30 16:43:11,559 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-06-30 16:43:11,559 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.94ms
+2026-06-30 16:43:13,503 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 16:43:13,607 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-06-30 16:43:13,608 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 1.00ms
+2026-06-30 16:43:15,406 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'RAGSkill': 0.07884986698627472, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-06-30 16:43:15,406 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:43:16,908 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-30 16:43:18,501 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-30 16:43:18,501 - JarvisAssistant - WARNING - GROQ_API_KEY is not set. LLM calls will fail.
+2026-06-30 16:43:21,088 - JarvisAssistant - ERROR - Groq API call failed after 2.04s: Connection error.
+2026-06-30 16:43:23,621 - JarvisAssistant - ERROR - Groq API call failed after 1.53s: Connection error.
+2026-06-30 16:43:27,153 - JarvisAssistant - ERROR - Groq API call failed after 1.53s: Connection error.
+2026-06-30 16:43:27,153 - JarvisAssistant - ERROR - LLM fallback failed: Connection error.
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 86, in handle_request
+    self._send_request_headers(**kwargs)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 144, in _send_request_headers
+    with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.LocalProtocolError: Illegal header value b'Bearer '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.LocalProtocolError: Illegal header value b'Bearer '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 151, in process_command
+    response, tokens_used, latency = llm_service.ask(command_resolved, history, summary)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\llm_service.py", line 80, in ask
+    raise e
+  File "E:\AI-Assistant\services\llm_service.py", line 64, in ask
+    completion = client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\resources\chat\completions.py", line 462, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1039, in request
+    raise APIConnectionError(request=request) from err
+groq.APIConnectionError: Connection error.
+2026-06-30 16:43:29,351 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'RAGSkill': 0.10305939614772797, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-06-30 16:43:29,352 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.30ms
+2026-06-30 16:43:30,793 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'RAGSkill': 0.08176244795322418, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-06-30 16:43:30,793 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:43:32,329 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-06-30 16:43:32,386 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'RAGSkill': 0.1049351841211319, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-06-30 16:43:32,386 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:43:34,096 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-06-30 16:43:34,142 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'RAGSkill': 0.06933944672346115, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-06-30 16:43:34,142 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 16:43:37,402 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'RAGSkill': 0.2463657557964325, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-06-30 16:43:37,403 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 182, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-06-30 16:43:37,406 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 4.73ms
+2026-06-30 16:43:42,176 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-06-30 16:43:42,184 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 8.18ms
+2026-06-30 16:43:46,629 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 16:43:46,629 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:34:53,733 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-06-30 23:34:53,817 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'RAGSkill': 0.2213228940963745, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-06-30 23:35:00,735 - JarvisAssistant - ERROR - Wikipedia skill error: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\requests\models.py", line 976, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\skills\wiki_skill.py", line 27, in handle
+    result = fetch_wiki_summary(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\wiki_service.py", line 34, in fetch_wiki_summary
+    summary = _fetch_wiki_api(query)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\wiki_service.py", line 26, in _fetch_wiki_api
+    return wikipedia.summary(query, sentences=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 231, in summary
+    page_info = page(title, auto_suggest=auto_suggest, redirect=redirect)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 270, in page
+    results, suggestion = search(title, results=1, suggestion=True)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 103, in search
+    raw_results = _wiki_request(search_params)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 742, in _wiki_request
+    return r.json()
+           ^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\requests\models.py", line 980, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-06-30 23:35:00,766 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 6949.58ms
+2026-06-30 23:35:00,805 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-06-30 23:35:00,832 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'RAGSkill': 0.11485123634338379, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-06-30 23:35:06,936 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 6104.36ms
+2026-06-30 23:35:08,183 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'RAGSkill': 0.09030185639858246, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-06-30 23:35:08,183 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:08,218 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'RAGSkill': 0.1701805293560028, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-06-30 23:35:08,218 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:08,256 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'RAGSkill': 0.34907129406929016, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-06-30 23:35:08,256 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:08,269 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-06-30 23:35:09,415 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 23:35:10,725 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 23:35:10,725 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-06-30 23:35:10,725 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-06-30 23:35:10,725 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:12,039 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-06-30 23:35:12,071 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-06-30 23:35:12,071 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:13,204 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'RAGSkill': 0.07884986698627472, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-06-30 23:35:13,204 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:14,365 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-06-30 23:35:15,314 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-06-30 23:35:15,314 - JarvisAssistant - WARNING - GROQ_API_KEY is not set. LLM calls will fail.
+2026-06-30 23:35:17,915 - JarvisAssistant - ERROR - Groq API call failed after 2.19s: Connection error.
+2026-06-30 23:35:20,634 - JarvisAssistant - ERROR - Groq API call failed after 1.70s: Connection error.
+2026-06-30 23:35:24,354 - JarvisAssistant - ERROR - Groq API call failed after 1.71s: Connection error.
+2026-06-30 23:35:24,354 - JarvisAssistant - ERROR - LLM fallback failed: Connection error.
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 86, in handle_request
+    self._send_request_headers(**kwargs)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_sync\http11.py", line 144, in _send_request_headers
+    with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.LocalProtocolError: Illegal header value b'Bearer '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\AI-Assistant\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.LocalProtocolError: Illegal header value b'Bearer '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 157, in process_command
+    response, tokens_used, latency = llm_service.ask(command_resolved, history, summary)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\llm_service.py", line 80, in ask
+    raise e
+  File "E:\AI-Assistant\services\llm_service.py", line 64, in ask
+    completion = client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\resources\chat\completions.py", line 462, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\groq\_base_client.py", line 1039, in request
+    raise APIConnectionError(request=request) from err
+groq.APIConnectionError: Connection error.
+2026-06-30 23:35:25,390 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'RAGSkill': 0.10305939614772797, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-06-30 23:35:25,390 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:26,949 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'RAGSkill': 0.08176244795322418, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-06-30 23:35:26,950 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:26,967 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-06-30 23:35:26,994 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'RAGSkill': 0.1049351841211319, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-06-30 23:35:26,994 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:27,013 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-06-30 23:35:27,029 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'RAGSkill': 0.06933944672346115, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-06-30 23:35:27,029 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:28,071 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'RAGSkill': 0.2463657557964325, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-06-30 23:35:28,071 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 190, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-06-30 23:35:28,071 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:31,947 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-06-30 23:35:31,947 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-06-30 23:35:36,055 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-06-30 23:35:36,055 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:20,655 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-07-01 01:06:20,780 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'RAGSkill': 0.2213228940963745, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-07-01 01:06:24,974 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4193.75ms
+2026-07-01 01:06:25,029 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-07-01 01:06:25,055 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'RAGSkill': 0.11485123634338379, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-07-01 01:06:29,951 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4896.33ms
+2026-07-01 01:06:31,551 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'RAGSkill': 0.09030185639858246, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-07-01 01:06:31,551 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:31,618 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'RAGSkill': 0.1701805293560028, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-07-01 01:06:31,618 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:31,674 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'RAGSkill': 0.34907129406929016, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-07-01 01:06:31,674 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:31,706 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-07-01 01:06:34,018 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-01 01:06:36,235 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-01 01:06:36,235 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-07-01 01:06:36,235 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-07-01 01:06:36,235 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:38,242 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-01 01:06:38,829 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-07-01 01:06:38,829 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:41,025 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'RAGSkill': 0.07884986698627472, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-07-01 01:06:41,025 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:43,508 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-07-01 01:06:46,427 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-07-01 01:06:48,124 - JarvisAssistant - INFO - Groq API call succeeded in 1.15s
+2026-07-01 01:06:51,974 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'RAGSkill': 0.10305939614772797, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-07-01 01:06:51,990 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 15.97ms
+2026-07-01 01:06:54,074 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'RAGSkill': 0.08176244795322418, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-07-01 01:06:54,074 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:54,090 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-07-01 01:06:54,128 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'RAGSkill': 0.1049351841211319, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-07-01 01:06:54,128 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:54,156 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-07-01 01:06:54,187 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'RAGSkill': 0.06933944672346115, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-07-01 01:06:54,187 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:06:57,268 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'RAGSkill': 0.2463657557964325, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-07-01 01:06:57,275 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 190, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-07-01 01:06:57,291 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 15.64ms
+2026-07-01 01:09:20,860 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-07-01 01:09:20,924 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'RAGSkill': 0.2213228940963745, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-07-01 01:09:24,931 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 4006.84ms
+2026-07-01 01:09:24,979 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-07-01 01:09:25,005 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'RAGSkill': 0.11485123634338379, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-07-01 01:09:28,991 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 3970.35ms
+2026-07-01 01:09:29,941 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'RAGSkill': 0.09030185639858246, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-07-01 01:09:29,941 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:29,974 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'RAGSkill': 0.1701805293560028, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-07-01 01:09:29,974 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:30,000 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'RAGSkill': 0.34907129406929016, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-07-01 01:09:30,000 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:30,016 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-07-01 01:09:30,974 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-01 01:09:32,074 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-01 01:09:32,074 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-07-01 01:09:32,074 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-07-01 01:09:32,074 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:33,200 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-01 01:09:33,224 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-07-01 01:09:33,224 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:34,200 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'RAGSkill': 0.07884986698627472, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-07-01 01:09:34,200 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:35,211 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-07-01 01:09:36,533 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-07-01 01:09:38,224 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'RAGSkill': 0.10305939614772797, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-07-01 01:09:38,224 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:39,701 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'RAGSkill': 0.08176244795322418, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-07-01 01:09:39,724 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:40,125 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-07-01 01:09:40,201 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'RAGSkill': 0.1049351841211319, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-07-01 01:09:40,201 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:40,566 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-07-01 01:09:40,582 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'RAGSkill': 0.06933944672346115, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-07-01 01:09:40,582 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:41,918 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'RAGSkill': 0.2463657557964325, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-07-01 01:09:42,001 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 190, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-07-01 01:09:42,024 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 23.71ms
+2026-07-01 01:09:45,585 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-07-01 01:09:45,585 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-07-01 01:09:49,551 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-01 01:09:49,551 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:49:41,497 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Isaac Newton'
+2026-07-07 09:49:41,816 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2340218871831894, 'HelpSkill': 0.14404094219207764, 'FunSkill': 0.14003318548202515, 'NewsSkill': 0.10002854466438293, 'RAGSkill': 0.2213228940963745, 'SystemSkill': 0.1419132947921753, 'TimeSkill': 0.10161591321229935, 'WeatherSkill': 0.09701170027256012, 'WikiSkill': 1.0}
+2026-07-07 09:49:50,371 - JarvisAssistant - ERROR - Wikipedia skill error: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "E:\AI-Assistant\venv\Lib\site-packages\requests\models.py", line 976, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\AI-Assistant\skills\wiki_skill.py", line 27, in handle
+    result = fetch_wiki_summary(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\wiki_service.py", line 34, in fetch_wiki_summary
+    summary = _fetch_wiki_api(query)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "E:\AI-Assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\services\wiki_service.py", line 26, in _fetch_wiki_api
+    return wikipedia.summary(query, sentences=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 231, in summary
+    page_info = page(title, auto_suggest=auto_suggest, redirect=redirect)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 270, in page
+    results, suggestion = search(title, results=1, suggestion=True)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 103, in search
+    raw_results = _wiki_request(search_params)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\wikipedia\wikipedia.py", line 742, in _wiki_request
+    return r.json()
+           ^^^^^^^^
+  File "E:\AI-Assistant\venv\Lib\site-packages\requests\models.py", line 980, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-07-07 09:49:50,839 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 9022.81ms
+2026-07-07 09:49:54,794 - JarvisAssistant - INFO - Pronoun resolved: 'what is the history of it' -> 'what is the history of Marie Curie'
+2026-07-07 09:49:54,861 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.017054671421647072, 'HelpSkill': 0.061292149126529694, 'FunSkill': 0.046182841062545776, 'NewsSkill': 0.08070678263902664, 'RAGSkill': 0.11485123634338379, 'SystemSkill': 0.0038981083780527115, 'TimeSkill': 0.09343557059764862, 'WeatherSkill': 0.09310796111822128, 'WikiSkill': 0.9999999582767487}
+2026-07-07 09:50:07,154 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 12292.76ms
+2026-07-07 09:50:12,383 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.0575982965528965, 'HelpSkill': 0.030182644724845886, 'FunSkill': 0.013478178530931473, 'NewsSkill': 0.10323584824800491, 'RAGSkill': 0.09030185639858246, 'SystemSkill': 0.022393103688955307, 'TimeSkill': 0.1530885398387909, 'WeatherSkill': 0.9186802566051483, 'WikiSkill': 0.0672341138124466}
+2026-07-07 09:50:12,386 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.77ms
+2026-07-07 09:50:12,587 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.18743786215782166, 'HelpSkill': 0.2248983383178711, 'FunSkill': 0.29867321252822876, 'NewsSkill': 0.9066938757896423, 'RAGSkill': 0.1701805293560028, 'SystemSkill': 0.11632182449102402, 'TimeSkill': 0.24925541877746582, 'WeatherSkill': 0.30763405561447144, 'WikiSkill': 0.36826157569885254}
+2026-07-07 09:50:12,587 - JarvisAssistant - INFO - Skill NewsSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:12,694 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11680113524198532, 'HelpSkill': 0.13193899393081665, 'FunSkill': 0.16558192670345306, 'NewsSkill': 0.12109077721834183, 'RAGSkill': 0.34907129406929016, 'SystemSkill': 0.14473015069961548, 'TimeSkill': 0.17906148731708527, 'WeatherSkill': 0.12925557792186737, 'WikiSkill': 1.0}
+2026-07-07 09:50:12,695 - JarvisAssistant - INFO - Skill WikiSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:12,717 - JarvisAssistant - INFO - Groq API call succeeded in 0.00s
+2026-07-07 09:50:18,716 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-07 09:50:23,968 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-07 09:50:23,968 - JarvisAssistant - INFO - Turn history threshold reached (>= 5). Summarizing conversation...
+2026-07-07 09:50:23,968 - JarvisAssistant - INFO - Summarization completed. New summary: Condensed: user query loop.
+2026-07-07 09:50:23,968 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:29,516 - JarvisAssistant - INFO - Intent classification scores: {'WikiSkill': 0.1}
+2026-07-07 09:50:29,586 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.9}
+2026-07-07 09:50:29,601 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 14.57ms
+2026-07-07 09:50:34,853 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1057816743850708, 'HelpSkill': 0.09005039185285568, 'FunSkill': 0.12510569393634796, 'NewsSkill': 0.18545833230018616, 'RAGSkill': 0.07884986698627472, 'SystemSkill': 0.012684997171163559, 'TimeSkill': 0.11990217119455338, 'WeatherSkill': 1.0, 'WikiSkill': 0.05949683487415314}
+2026-07-07 09:50:34,854 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:38,318 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.55, 'WikiSkill': 0.45, 'NewsSkill': 0.1}
+2026-07-07 09:50:41,954 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.15, 'WikiSkill': 0.1}
+2026-07-07 09:50:44,971 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.06090177223086357, 'HelpSkill': 0.04250646382570267, 'FunSkill': 0.026114020496606827, 'NewsSkill': 0.08041960746049881, 'RAGSkill': 0.10305939614772797, 'SystemSkill': 0.049305129796266556, 'TimeSkill': 0.0837894156575203, 'WeatherSkill': 0.8206783056259155, 'WikiSkill': 0.19732722640037537}
+2026-07-07 09:50:44,972 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 1.00ms
+2026-07-07 09:50:48,939 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.1437644511461258, 'HelpSkill': 0.13448964059352875, 'FunSkill': 0.10511356592178345, 'NewsSkill': 0.18515923619270325, 'RAGSkill': 0.08176244795322418, 'SystemSkill': 0.06886422634124756, 'TimeSkill': 0.15261036157608032, 'WeatherSkill': 0.9943199634552002, 'WikiSkill': 0.15575918555259705}
+2026-07-07 09:50:48,939 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:48,948 - JarvisAssistant - INFO - Pronoun resolved: 'how is it there?' -> 'how is Munich in Munich?'
+2026-07-07 09:50:49,021 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.12483706325292587, 'HelpSkill': 0.1550026386976242, 'FunSkill': 0.15105687081813812, 'NewsSkill': 0.23381873965263367, 'RAGSkill': 0.1049351841211319, 'SystemSkill': 0.12071918696165085, 'TimeSkill': 0.19605252146720886, 'WeatherSkill': 0.8043083131313324, 'WikiSkill': 0.1974462866783142}
+2026-07-07 09:50:49,022 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:49,051 - JarvisAssistant - INFO - Ellipsis merged: 'what about Paris?' -> 'how is Paris in Paris?'
+2026-07-07 09:50:49,119 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.11889126896858215, 'HelpSkill': 0.15235503017902374, 'FunSkill': 0.16847962141036987, 'NewsSkill': 0.22227084636688232, 'RAGSkill': 0.06933944672346115, 'SystemSkill': 0.16012042760849, 'TimeSkill': 0.23296646773815155, 'WeatherSkill': 0.7927909016609191, 'WikiSkill': 0.19898542761802673}
+2026-07-07 09:50:49,119 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:50:52,276 - JarvisAssistant - INFO - Intent classification scores: {'ControlSkill': 0.2291649580001831, 'HelpSkill': 0.20829802751541138, 'FunSkill': 0.13288888335227966, 'NewsSkill': 0.23699860274791718, 'RAGSkill': 0.2463657557964325, 'SystemSkill': 0.19066929817199707, 'TimeSkill': 1.0, 'WeatherSkill': 0.35726624727249146, 'WikiSkill': 0.22085055708885193}
+2026-07-07 09:50:52,277 - JarvisAssistant - ERROR - Skill execution failed for TimeSkill: Simulated skill crash
+Traceback (most recent call last):
+  File "E:\AI-Assistant\assistant.py", line 190, in process_command
+    response, new_state = skill.handle(doc.text.lower(), doc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Simulated skill crash
+2026-07-07 09:50:52,283 - JarvisAssistant - INFO - Skill TimeSkill invoked. Elapsed time: 4.63ms
+2026-07-07 09:51:04,187 - JarvisAssistant - INFO - Intent classification scores: {'RAGSkill': 0.8}
+2026-07-07 09:51:04,187 - JarvisAssistant - INFO - Skill RAGSkill invoked. Elapsed time: 0.00ms
+2026-07-07 09:51:10,077 - JarvisAssistant - INFO - Intent classification scores: {'WeatherSkill': 0.9}
+2026-07-07 09:51:10,077 - JarvisAssistant - INFO - Skill WeatherSkill invoked. Elapsed time: 0.00ms

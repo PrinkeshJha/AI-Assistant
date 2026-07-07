@@ -9,3 +9,9 @@ cachetools
 tenacity
 python-dotenv
 pytest
+sentence-transformers
+redis
+groq
+faiss-cpu
+pypdf
+python-docx

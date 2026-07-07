@@ -1,0 +1,13 @@
+{
+  "intent": "HelpSkill",
+  "examples": [
+    "help",
+    "what can you do",
+    "commands",
+    "show me the commands",
+    "what can I ask you",
+    "help me with commands",
+    "list all commands",
+    "what are the available instructions"
+  ]
+}

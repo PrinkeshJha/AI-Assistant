@@ -1,0 +1,13 @@
+{
+  "intent": "FunSkill",
+  "examples": [
+    "joke",
+    "tell me a joke",
+    "make me laugh",
+    "do you know any jokes",
+    "tell a funny joke",
+    "crack a joke",
+    "tell me a programming joke",
+    "say something funny"
+  ]
+}
