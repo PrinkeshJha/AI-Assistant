@@ -2,9 +2,9 @@ services:
   # 1. Main Jarvis AI Flask-SocketIO Web Service
   - type: web
     name: jarvis-ai-assistant
-    env: docker
+    runtime: docker
     dockerfilePath: Dockerfile
-    plan: starter
+    plan: free
     startCommand: python app.py
     envVars:
       - key: PORT
@@ -32,5 +32,5 @@ services:
   # 2. Redis Store for Session Context Persistence
   - type: redis
     name: jarvis-redis
-    plan: starter
+    plan: free
     ipAllowList: [] # Restrict to internal application connections only
