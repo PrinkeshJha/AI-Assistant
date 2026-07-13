@@ -33,20 +33,23 @@ def test_pronoun_context_resolution(monkeypatch):
         def __init__(self, sid):
             self.sid = sid
 
-    # Run for Session A
-    monkeypatch.setattr("session_context.request", MockRequest("sessionA"))
-    monkeypatch.setattr("session_context.has_request_context", lambda: True)
+    from unittest.mock import patch
+    with patch("skills.wiki_skill.fetch_wiki_summary", side_effect=lambda query: f"Wikipedia summary of {query}"):
+        # Run for Session A
+        monkeypatch.setattr("session_context.request", MockRequest("sessionA"))
+        monkeypatch.setattr("session_context.has_request_context", lambda: True)
 
-    # We process a pronoun query
-    res, state = assistant.process_command("what is the history of it")
-    # It will resolve to "what is the history of Isaac Newton" and search Wikipedia
-    assert "Isaac Newton" in res or "Newton" in res or "Wikipedia" in res
+        # We process a pronoun query
+        res, state = assistant.process_command("what is the history of it")
+        # It will resolve to "what is the history of Isaac Newton" and search Wikipedia
+        assert "Isaac Newton" in res or "Newton" in res or "Wikipedia" in res
 
-    # Run for Session B
-    monkeypatch.setattr("session_context.request", MockRequest("sessionB"))
-    
-    res, state = assistant.process_command("what is the history of it")
-    assert "Marie Curie" in res or "Curie" in res or "Wikipedia" in res
+        # Run for Session B
+        monkeypatch.setattr("session_context.request", MockRequest("sessionB"))
+        
+        res, state = assistant.process_command("what is the history of it")
+        assert "Marie Curie" in res or "Curie" in res or "Wikipedia" in res
 
     delete_session_context("sessionA")
     delete_session_context("sessionB")
+

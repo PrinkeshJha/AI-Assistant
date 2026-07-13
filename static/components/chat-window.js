@@ -48,7 +48,8 @@ export class ChatWindow {
             // Set typing state
             this.store.setIsTyping(true);
             // Send via socket
-            const sent = this.socketClient.sendCommand(command);
+            const activeConvId = this.store.state.activeConversationId;
+            const sent = this.socketClient.sendCommand(command, activeConvId);
             if (sent) {
                 this.input.value = '';
             } else {
@@ -60,7 +61,8 @@ export class ChatWindow {
     sendSuggestion(command) {
         this.store.addMessage('user', command);
         this.store.setIsTyping(true);
-        this.socketClient.sendCommand(command);
+        const activeConvId = this.store.state.activeConversationId;
+        this.socketClient.sendCommand(command, activeConvId);
     }
 
     render(state) {

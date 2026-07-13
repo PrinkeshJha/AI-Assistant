@@ -1,4 +1,3 @@
-import webbrowser
 import wikipedia
 from .base_skill import Skill
 from session_context import get_session_context
@@ -10,11 +9,10 @@ class WikiSkill(Skill):
 
     def handle(self, command, doc):
         if "open google" in command:
-            webbrowser.open("https://google.com")
-            return "Opening Google.", "IDLE"
+            return "[ACTION:OPEN_URL] https://google.com", "IDLE"
         elif "open youtube" in command:
-            webbrowser.open("https://youtube.com")
-            return "Opening YouTube.", "IDLE"
+            return "[ACTION:OPEN_URL] https://youtube.com", "IDLE"
+
         else: 
             query = command.replace("search for", "").replace("what is", "").replace("who is", "").strip()
             try:

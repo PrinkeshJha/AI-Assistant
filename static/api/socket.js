@@ -8,13 +8,18 @@ export class SocketClient {
     }
 
     connect() {
+        const token = localStorage.getItem('jarvis_token');
+        
         // io() is imported globally via templates/jarvis_ui.html
         this.socket = io({
             reconnection: true,
-            reconnectionAttempts: 10,
+            reconnectionAttempts: 15,
             reconnectionDelay: 1000,
             reconnectionDelayMax: 5000,
             timeout: 20000,
+            auth: {
+                token: token
+            }
         });
 
         this.socket.on('connect', () => {
@@ -35,6 +40,12 @@ export class SocketClient {
         this.socket.on('reconnect_attempt', (attempt) => {
             console.log(`Reconnection attempt #${attempt}`);
             this.onStatusChange('connecting');
+            // Refresh token on reconnect if it changed
+            if (this.socket.io && this.socket.io.opts) {
+                this.socket.io.opts.auth = {
+                    token: localStorage.getItem('jarvis_token')
+                };
+            }
         });
 
         this.socket.on('reconnect_failed', () => {
@@ -48,13 +59,22 @@ export class SocketClient {
         });
     }
 
-    sendCommand(command) {
+    sendCommand(command, conversationId = null) {
         if (this.socket && this.socket.connected) {
-            this.socket.emit('user_command', { command });
+            this.socket.emit('user_command', { 
+                command,
+                conversation_id: conversationId 
+            });
             return true;
         }
         console.error('Cannot send command. Socket is not connected.');
         return false;
+    }
+
+    disconnect() {
+        if (this.socket) {
+            this.socket.disconnect();
+        }
     }
 
     getSessionId() {

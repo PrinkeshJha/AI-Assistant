@@ -15,3 +15,6 @@ groq
 faiss-cpu
 pypdf
 python-docx
+Flask-SQLAlchemy
+Flask-JWT-Extended
+Flask-Limiter
