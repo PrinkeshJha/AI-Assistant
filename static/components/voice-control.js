@@ -53,7 +53,8 @@ export class VoiceControl {
                 this.store.addMessage('user', command);
                 this.store.setIsTyping(true);
                 this.store.setVoiceStatus('processing');
-                this.socketClient.sendCommand(command);
+                const activeConvId = this.store.state.activeConversationId;
+                this.socketClient.sendCommand(command, activeConvId);
             };
 
             this.recognition.onerror = (event) => {

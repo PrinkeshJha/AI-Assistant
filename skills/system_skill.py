@@ -9,21 +9,20 @@ class SystemSkill(Skill):
     def handle(self, command, doc):
         if "battery" in command:
             battery = psutil.sensors_battery()
-            if not battery:
-                return "I am unable to access battery information on this device.", "IDLE"
-            
-            percentage = battery.percent
-            plugged = "plugged in" if battery.power_plugged else "not plugged in"
-            return f"The system is at {percentage} percent battery and is currently {plugged}.", "IDLE"
+            plugged_str = ""
+            percentage = 100
+            if battery:
+                percentage = battery.percent
+                plugged_str = f" and is currently {'plugged in' if battery.power_plugged else 'not plugged in'}"
+            else:
+                plugged_str = " (using AC power)"
+                
+            cpu = psutil.cpu_percent()
+            memory = psutil.virtual_memory().percent
+            return f"System metrics: Battery is at {percentage}%{plugged_str}. Server CPU usage is at {cpu}% and memory usage is at {memory}%.", "IDLE"
         
         elif "notepad" in command or "calculator" in command:
-            app = 'notepad' if 'notepad' in command else 'calc'
-            app_name = "Notepad" if app == 'notepad' else "Calculator"
-            try:
-                os.system(f"start {app}") # This command is for Windows
-                return f"Opening {app_name}...", "IDLE"
-            except Exception as e:
-                print(f"System skill error: {e}")
-                return f"Sorry, I was unable to open {app_name}.", "IDLE"
+            app_name = "Notepad" if 'notepad' in command else "Calculator"
+            return f"Opening {app_name} locally is disabled in Cloud Mode. However, the server stats show CPU at {psutil.cpu_percent()}% and memory at {psutil.virtual_memory().percent}%.", "IDLE"
 
         return "I can't perform that system action.", "IDLE"

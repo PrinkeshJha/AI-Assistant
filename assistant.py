@@ -61,6 +61,58 @@ class JarvisAssistant:
             except Exception as e:
                 self.logger.error(f"Error during context summarization: {e}")
 
+    def _load_db_history(self, conversation_id, limit=10):
+        from models import Message
+        messages = Message.query.filter_by(conversation_id=conversation_id).order_by(Message.timestamp.asc()).all()
+        turns = []
+        current_turn = None
+        for msg in messages:
+            if msg.sender == 'user':
+                if current_turn:
+                    turns.append(current_turn)
+                current_turn = {
+                    'query': msg.text,
+                    'response': '',
+                    'intent': msg.source or 'None',
+                    'entities': []
+                }
+            elif msg.sender == 'assistant':
+                if current_turn:
+                    current_turn['response'] = msg.text
+                    current_turn['intent'] = msg.source or 'None'
+                    turns.append(current_turn)
+                    current_turn = None
+        if current_turn:
+            turns.append(current_turn)
+        return turns[-limit:]
+
+    def _save_db_message(self, session_context, query, response):
+        from flask import has_app_context
+        conv_id = session_context.get('active_conversation_id')
+        if conv_id and has_app_context():
+            try:
+                from models import db, Message
+                user_msg = Message(
+                    conversation_id=conv_id,
+                    sender='user',
+                    text=query,
+                    source='user',
+                    confidence=1.0
+                )
+                assistant_msg = Message(
+                    conversation_id=conv_id,
+                    sender='assistant',
+                    text=response,
+                    source=session_context.get('last_source', 'skill'),
+                    confidence=session_context.get('last_confidence', 1.0)
+                )
+                db.session.add(user_msg)
+                db.session.add(assistant_msg)
+                db.session.commit()
+            except Exception as e:
+                self.logger.error(f"Error saving message to DB: {e}")
+
+
 
     def _load_skills(self) -> list[Skill]:
         skills = []
@@ -99,7 +151,16 @@ class JarvisAssistant:
         session_context = get_session_context()
 
         # Retrieve previous query history to resolve ellipsis
-        history = session_context.get('history', [])
+        conv_id = session_context.get('active_conversation_id')
+        from flask import has_app_context
+        if conv_id and has_app_context():
+            try:
+                history = self._load_db_history(conv_id)
+            except Exception as e:
+                self.logger.error(f"Error loading DB history: {e}")
+                history = session_context.get('history', [])
+        else:
+            history = session_context.get('history', [])
         prev_query = history[-1]['query'] if history else None
 
         # 1. Resolve pronouns
@@ -150,6 +211,7 @@ class JarvisAssistant:
                 )
                 session_context['last_source'] = 'clarification'
                 session_context['last_confidence'] = float(best_score)
+                self._save_db_message(session_context, command_processed, response)
                 return response, "IDLE"
             else:
                 try:
@@ -178,6 +240,7 @@ class JarvisAssistant:
                 )
                 session_context['last_source'] = 'llm'
                 session_context['last_confidence'] = float(best_score)
+                self._save_db_message(session_context, command_processed, response)
                 return response, "IDLE"
 
         # 5. Dispatch if confidence >= 0.65
@@ -220,6 +283,7 @@ class JarvisAssistant:
                     )
                     session_context['last_source'] = 'rag' if best_intent == 'RAGSkill' else 'skill'
                     session_context['last_confidence'] = float(best_score)
+                    self._save_db_message(session_context, command_processed, response)
                     return response, new_state
 
         log_metric(
@@ -231,4 +295,6 @@ class JarvisAssistant:
         )
         session_context['last_source'] = 'llm'
         session_context['last_confidence'] = 0.0
-        return "I'm not sure how to help with that yet.", "IDLE"
+        response = "I'm not sure how to help with that yet."
+        self._save_db_message(session_context, command_processed, response)
+        return response, "IDLE"

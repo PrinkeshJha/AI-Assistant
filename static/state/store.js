@@ -3,20 +3,30 @@
 export class Store {
     constructor() {
         this.state = {
+            token: localStorage.getItem('jarvis_token') || null,
+            user: JSON.parse(localStorage.getItem('jarvis_user')) || null,
             connectionStatus: 'disconnected',
             voiceStatus: 'idle', // 'idle' | 'listening' | 'processing' | 'speaking'
             conversationHistory: [],
+            conversationsList: [],
+            activeConversationId: null,
             documentsList: [],
             isTyping: false,
             activeUploads: [], // Array of { name, progress, error }
-            sessionId: null
+            sessionId: null,
+            stats: {
+                intent_distribution: {},
+                average_confidence: 0,
+                fallback_rate: 0,
+                average_latency: 0,
+                rag_query_count: 0
+            }
         };
         this.listeners = new Set();
     }
 
     subscribe(listener) {
         this.listeners.add(listener);
-        // Return unsubscribe function
         return () => {
             this.listeners.delete(listener);
         };
@@ -30,6 +40,23 @@ export class Store {
                 console.error('Error in state listener:', e);
             }
         }
+    }
+
+    setAuth(token, user) {
+        this.state.token = token;
+        this.state.user = user;
+        if (token) {
+            localStorage.setItem('jarvis_token', token);
+            localStorage.setItem('jarvis_user', JSON.stringify(user));
+        } else {
+            localStorage.removeItem('jarvis_token');
+            localStorage.removeItem('jarvis_user');
+            this.state.conversationsList = [];
+            this.state.activeConversationId = null;
+            this.state.conversationHistory = [];
+            this.state.documentsList = [];
+        }
+        this.notify();
     }
 
     setConnectionStatus(status) {
@@ -58,6 +85,29 @@ export class Store {
             this.state.isTyping = isTyping;
             this.notify();
         }
+    }
+
+    setConversationsList(list) {
+        this.state.conversationsList = list;
+        this.notify();
+    }
+
+    setActiveConversationId(id) {
+        this.state.activeConversationId = id;
+        this.notify();
+    }
+
+    setConversationHistory(history) {
+        // Map backend Message list to frontend conversation history bubbles
+        this.state.conversationHistory = history.map(msg => ({
+            id: msg.id,
+            sender: msg.sender,
+            text: msg.text,
+            timestamp: new Date(msg.timestamp),
+            source: msg.source,
+            confidence: msg.confidence
+        }));
+        this.notify();
     }
 
     addMessage(sender, text, metadata = {}) {
@@ -108,6 +158,11 @@ export class Store {
 
     clearUploadError(name) {
         this.state.activeUploads = this.state.activeUploads.filter(u => u.name !== name);
+        this.notify();
+    }
+
+    setStats(stats) {
+        this.state.stats = stats;
         this.notify();
     }
 }

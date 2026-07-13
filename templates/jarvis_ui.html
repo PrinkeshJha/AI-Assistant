@@ -6,7 +6,7 @@
     <meta name="description" content="Jarvis — AI-powered voice and text assistant with semantic NLU, RAG document QA, multi-user session isolation, and real-time WebSocket communication.">
     <meta name="theme-color" content="#050811">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <title>Jarvis - AI Voice & Text Assistant</title>
+    <title>Jarvis - Premium AI SaaS Assistant</title>
     <!-- Socket.io client -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
     <!-- Premium Stylesheet -->
@@ -18,13 +18,32 @@
     <canvas class="particle-canvas" id="particle-canvas-1"></canvas>
     <canvas class="particle-canvas" id="particle-canvas-2"></canvas>
     
-    <div class="app-container">
+    <!-- AUTH PANEL (Login / Register Card) -->
+    <div id="auth-panel" class="auth-container">
+        <!-- Auth Component will inject forms here -->
+    </div>
+
+    <!-- MAIN APP VIEWPORT (Dashboard) -->
+    <div id="app-viewport" class="app-container" style="display: none;">
         <!-- HEADER -->
         <header class="app-header glass-panel">
             <div class="logo-container">
                 <h1>J.A.R.V.I.S</h1>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px;">
+            
+            <div class="header-center">
+                <span id="active-chat-title" class="chat-title-display">Initial Chat</span>
+            </div>
+
+            <div class="header-actions">
+                <button id="view-stats-btn" class="stats-toggle-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span>Analytics</span>
+                </button>
                 <button id="sidebar-toggle-btn" class="mobile-sidebar-toggle">Manage Docs</button>
                 <div id="connection-status-badge" class="connection-badge disconnected">
                     <span class="badge-dot"></span>
@@ -47,8 +66,44 @@
             </div>
         </main>
 
-        <!-- SIDEBAR (Voice Orb + Document Manager) -->
+        <!-- SIDEBAR (Voice Orb + Document Manager + Conversation Threads) -->
         <aside id="sidebar-panel" class="sidebar">
+            
+            <!-- User Profile & Log Out section -->
+            <section class="profile-section glass-panel">
+                <div class="profile-info">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-details">
+                        <span class="profile-name" id="user-display-name">Agent</span>
+                        <span class="profile-role">Core Operator</span>
+                    </div>
+                </div>
+                <button id="logout-btn" class="logout-button" title="Disconnect Identity">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button>
+            </section>
+
+            <!-- Conversations History threads -->
+            <section class="conversations-section glass-panel">
+                <div class="section-header">
+                    <h2>Chat Sessions</h2>
+                    <button id="new-chat-btn" class="new-chat-btn" title="Create New Session">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>New</span>
+                    </button>
+                </div>
+                <div id="conversations-list" class="conversations-scroll">
+                    <!-- User conversations will render here -->
+                </div>
+            </section>
+
             <!-- Voice Interactions -->
             <section class="voice-section glass-panel state-idle">
                 <h2 class="voice-title">Voice Link</h2>
@@ -108,6 +163,52 @@
         </aside>
     </div>
 
+    <!-- STATS MODAL OVERLAY -->
+    <div id="stats-modal" class="modal-overlay" style="display: none;">
+        <div class="stats-modal-card glass-panel">
+            <div class="modal-header">
+                <h2>Jarvis Core System Analytics</h2>
+                <button id="close-stats-modal-btn" class="close-modal-btn">&times;</button>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">System Fallback Rate</span>
+                    <span class="stat-value" id="stat-fallback-rate">0.0%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Mean Core Latency</span>
+                    <span class="stat-value" id="stat-avg-latency">0.00s</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Mean Query Confidence</span>
+                    <span class="stat-value" id="stat-avg-confidence">0.0%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Document QA Queries</span>
+                    <span class="stat-value" id="stat-rag-count">0</span>
+                </div>
+            </div>
+
+            <div class="stats-distribution-section">
+                <h3>Intent Activation Distribution</h3>
+                <div class="distribution-table-container">
+                    <table class="distribution-table" id="intent-distribution-table">
+                        <thead>
+                            <tr>
+                                <th>Intent Class</th>
+                                <th>Invocations Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Background Particle Script -->
     <script>
         function createParticleSystem(canvasId, particleCount, color, speedFactor) {
@@ -139,8 +240,8 @@
             window.addEventListener('resize', () => { setCanvasSize(); init(); });
             setCanvasSize(); init(); animate();
         }
-        createParticleSystem('particle-canvas-1', 14000, 'rgba(255, 255, 255, 0.08)', 0.4);
-        createParticleSystem('particle-canvas-2', 22000, 'rgba(59, 130, 246, 0.22)', 0.8);
+        createParticleSystem('particle-canvas-1', 14000, 'rgba(255, 255, 255, 0.04)', 0.4);
+        createParticleSystem('particle-canvas-2', 22000, 'rgba(59, 130, 246, 0.14)', 0.8);
     </script>
 
     <!-- App Entry Point Module -->

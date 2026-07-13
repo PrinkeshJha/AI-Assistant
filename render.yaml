@@ -1,0 +1,36 @@
+services:
+  # 1. Main Jarvis AI Flask-SocketIO Web Service
+  - type: web
+    name: jarvis-ai-assistant
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 5000
+      # Auto-generates a secure JWT key on Render deploy
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      # Database URI for SQLite persistence (or bind to external PostgreSQL)
+      - key: DATABASE_URL
+        value: sqlite:///logs/jarvis.db
+      # Sync variables requesting operator values on setup
+      - key: GROQ_API_KEY
+        sync: false
+      - key: NEWS_API_KEY
+        sync: false
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      # Link connection string from the redis service below
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: jarvis-redis
+          property: connectionString
+
+  # 2. Redis Store for Session Context Persistence
+  - type: redis
+    name: jarvis-redis
+    plan: starter
+    ipAllowList: [] # Restrict to internal application connections only
