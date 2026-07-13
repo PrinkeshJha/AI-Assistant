@@ -31,4 +31,4 @@ JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "jarvis-super-secret-key-123!"
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASE_URL = os.environ.get("DATABASE_URL", f"sqlite:///{os.path.join(BASE_DIR, 'logs', 'jarvis.db')}")
 # Ensure the logs directory exists for SQLite
-os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)

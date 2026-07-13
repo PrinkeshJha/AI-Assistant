@@ -518,8 +518,8 @@ if __name__ == '__main__':
     print(f"Starting Flask server on http://0.0.0.0:{port}")
     socketio.run(
         app, 
-        host='0.0.0.0', 
-        port=port, 
+        host='0.0.0.0',
+        port=port,
         debug=not is_production,
         allow_unsafe_werkzeug=True
     )
