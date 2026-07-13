@@ -512,5 +512,14 @@ def delete_document():
             return jsonify({'error': f'Failed to delete document: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    print("Starting Flask server on http://127.0.0.1:5000")
-    socketio.run(app, debug=True, allow_unsafe_werkzeug=True)
+    port = int(os.environ.get("PORT", 5000))
+    is_production = os.environ.get('RENDER') == 'true'
+    
+    print(f"Starting Flask server on http://0.0.0.0:{port}")
+    socketio.run(
+        app, 
+        host='0.0.0.0',
+        port=port,
+        debug=not is_production,
+        allow_unsafe_werkzeug=True
+    )
